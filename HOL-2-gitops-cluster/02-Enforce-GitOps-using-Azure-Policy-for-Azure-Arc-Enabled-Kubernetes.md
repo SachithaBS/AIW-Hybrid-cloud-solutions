@@ -1,6 +1,6 @@
 # Exercise 2: Enforce GitOps using Azure Policy for Azure Arc-enabled Kubernetes
 
-Contoso’s Central IT team also want to ensure that any new distribution site is quickly ready to set up and start operations with the applications they need. Leveraging Azure Policy, they are able to ensure that any new Kubernetes cluster is automatically connected to the same Git repository where the applications are configured so these can be deployed to the new cluster without any manual intervention from DevOps teams.
+Contoso’s Central IT team also want to ensure that any new distribution site is quickly ready to set up and start operations with the applications they need. Leveraging Azure Policy, they can ensure that any new Kubernetes cluster is automatically connected to the same Git repository where the applications are configured so these can be deployed to the new cluster without any manual intervention from DevOps teams.
 
 In this exercise, you will see how to use Azure Policy to enforce that each Azure Arc-enabled Kubernetes cluster has specific GitOps configurations applied to it.
 
@@ -68,6 +68,7 @@ In this task, you will select an existing policy definition and create a policy 
       ```
       --git-readonly
       ```
+    
     - Repository URL: The forked repo name of **https://github.com/Azure/arc-k8s-demo** that you are using for performing the lab.
 
     - Set the **Enable helm** option to **false**.
@@ -78,7 +79,7 @@ In this task, you will select an existing policy definition and create a policy 
 
 1. Then, Click on **Next** from the bottom of the page.
    
-1. Select the **Create a remediation task** check box and then click **Review+create**, skip the Non-compliance messages.
+1. Select the **Create a remediation task** check box and then click **Review + create**, skip the Non-compliance messages.
 
     ![](.././media/hol2ss1.png)
      
@@ -92,10 +93,4 @@ In this task, you will select an existing policy definition and create a policy 
 
      ![](.././media/policy-5.png)
    
-You don't have to wait for the compliance state to change. You can move ahead to the next exercise and later come back to this page to review the state.
-
-   > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-   > - Navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
-   > - Hit the Validate button for the corresponding task. You can proceed to the next task if you receive a success message.
-   > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-   > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+>**Note:** You don't have to wait for the compliance state to change. You can move ahead to the next exercise and later come back to this page to review the state.
