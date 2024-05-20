@@ -20,7 +20,7 @@ Your virtual machine is your workhorse throughout the workshop. The lab guide is
  
 To get a better understanding of your lab resources and credentials, navigate to the **Environment Details** tab.
 
-   ![](.././media/15-05-2024.png)
+   ![](.././media/20-05-2024.png)
  
 ## **Utilizing the Split Window Feature**
  
@@ -32,7 +32,7 @@ For convenience, you can open the lab guide in a separate window by selecting th
  
 Feel free to start, stop, or restart your virtual machine as needed from the **Resources** tab. Your experience is in your hands!
  
-  ![](.././media/15-05-2024(1).png)
+  ![](.././media/20-05-2024(1).png)
 
 ## **Let's Get Started with Azure Portal**
  
@@ -59,10 +59,6 @@ Feel free to start, stop, or restart your virtual machine as needed from the **R
 5. If you see the pop-up **You have free Azure Advisor recommendations!**, close the window to continue the lab.
 
 6. If a **Welcome to Microsoft Azure** popup window appears, click **Maybe Later** to skip the tour.
-   
-7. Now, click on the **Next** from the lower right corner to move to the next page.
-
-   ![](.././media/GS4.png)
  
 Now you're all set to explore the powerful world of technology. Feel free to reach out if you have any questions along the way. Enjoy your workshop! 
 
@@ -189,7 +185,7 @@ In this task, you will onboard the local Kubernetes cluster to Azure Arc. So, he
    az extension update --name connectedk8s
    ```
     
-   ![](.././media/update-k8s-extensions-new.png "Update Az k8s extensions")
+   ![](.././media/20-05-2024(2).png "Update Az k8s extensions")
     
 1. Now, you can check the status of the Kubernetes cluster by running ```microk8s.status``` in **ubuntu-k8s** VM. To check the status once the command is executed, you have to scroll up to the top of the output to view the status. If the status is **microk8s is running**, you can proceed to the next step. But, if it is in a stopped state, you have to run the ```microk8s start``` command to restart the Kubernetes cluster.
 
