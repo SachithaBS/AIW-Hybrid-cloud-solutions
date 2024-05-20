@@ -10,7 +10,7 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
 
 In this task, you'll navigate to the GitHub repository containing the Azure Arc-enabled Kubernetes demo configurations. By forking this repository to your own GitHub account, you'll have the necessary access to modify and deploy Kubernetes configurations using GitOps methodology. This step is essential for subsequent tasks involving configuration deployment and updates.
 
-1. Open browser and Launch the following GitHub repository URL ```https://github.com/Azure/arc-k8s-demo```. In the upper right corner you will see **Sign in** and **Sign up** options, if you already have a github account then click on **Sign in**, otherwise **Sign up**.
+1. Open the browser and Launch the following GitHub repository URL ```https://github.com/Azure/arc-k8s-demo```. In the upper right corner you will see **Sign in** and **Sign up** options, if you already have a github account then click on **Sign in**, otherwise **Sign up**.
 
    ![](.././media/01.png) 
 
@@ -58,21 +58,22 @@ In this task, you will configure access to an Ubuntu-K8s VM using PuTTY, upgrade
     
 1. Run the below commands to upgrade the az packages and az module. 
    
-     ```
-      curl https://bootstrap.pypa.io/get-pip.py > get-pip.py
-      python3 get-pip.py
-      apt install pip
-      python3 get-pip.py
-      python3 -m pip install -U pip
-      python3 -m pip install --upgrade pip --target /opt/az/lib/python3.6/site-packages/
-      az upgrade -y
-      init 6
+   ```
+   curl https://bootstrap.pypa.io/get-pip.py > get-pip.py
+   apt install pip
+   python3 get-pip.py
+   python3 -m pip install -U pip
+   python3 -m pip install --upgrade pip --target /opt/az/lib/python3.6/site-packages/
+   pip install azure-common
+   apt update
+   az upgrade -y
+   init 6 #TO restart
     ```
 
     > **Note**: If in case, the above commands fail then please run the below-mentioned command:
     
     ```
-     sudo apt-get install python3-pip
+    sudo apt-get install python3-pip
     ```
 1. Open a new Putty session, re-perform the steps from step 2 to step 5 of the same task to get the upgraded packages and then continue from step 9.
 
@@ -98,11 +99,13 @@ In this task, you will onboard the local Kubernetes cluster to Azure Arc. So, he
 1. To install helm, you need to run the following commands within the terminal of the ubuntu-k8s VM that is opened in Putty:
             
      > **Info**: Helm is a Kubernetes deployment tool for automating the creation, packaging, configuration, and deployment of applications and services to Kubernetes clusters. The Kubernetes app's manifests are stored in helm charts.
+
    ```
    curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
    chmod 700 get_helm.sh
    ./get_helm.sh
    ```
+
    **Note**: In case you see `Could not find git. It is required  for plugin installation.` warning, please ignore it and continue with the lab.
     
    ![](.././media/installhelm.png "installhelm")
@@ -117,7 +120,7 @@ In this task, you will onboard the local Kubernetes cluster to Azure Arc. So, he
     >**Note**: If you face any exceptions while updating the CLI version, please run the below command and rerun the **az upgrade -y** command.
 
     ```
-     sudo apt-get install python3-pip
+    sudo apt-get install python3-pip
     ```
 
 1. Then, you will update the Arc-enabled Kubernetes CLI extension to ensure that we are always using the latest k8s extension for Azure CLI.
@@ -131,11 +134,13 @@ In this task, you will onboard the local Kubernetes cluster to Azure Arc. So, he
 1. Now, you can check the status of the Kubernetes cluster by running ```microk8s.status``` in **ubuntu-k8s** VM. To check the status once the command is executed, you have to scroll up to the top of the output to view the status. If the status is **microk8s is running**, you can proceed to the next step. But, if it is in a stopped state, you have to run the ```microk8s start``` command to restart the Kubernetes cluster.
 
    - Command to check the status of the Kubernetes cluster
+
      ```
      microk8s.status
      ```
      
    - Command to start the Kubernetes cluster
+
      ```
      microk8s start
      ```
@@ -150,7 +155,7 @@ In this task, you will onboard the local Kubernetes cluster to Azure Arc. So, he
 
 1. Next, you will write the config file to the $HOME/.kube directory by executing the below command.
 
-     > **Info**: A kubeconfig file is a file used to configure access to Kubernetes when used in conjunction with the kubectl commandline tool (or other clients).
+     > **Info**: A kubeconfig file is a file used to configure access to Kubernetes when used in conjunction with the kubectl command-line tool (or other clients).
 
    ```
    cd $HOME
@@ -170,7 +175,8 @@ In this task, you will onboard the local Kubernetes cluster to Azure Arc. So, he
     
    ![](.././media/connect-k8sv2.png "Connect Kubernetes")
    
-   > **Note**: While running the above command, if you face an error stating **Could not retrieve credential from local cache**, run the following command to log in to the azure portal again.
+   > **Note**: While running the above command, if you face an error stating **Could not retrieve credential from local cache**, run the following command to log in to the Azure portal again.
+
    ```
    az login -u $AppID --service-principal --tenant $TenantID -p $AppSecret
    ```
@@ -217,7 +223,7 @@ In this task, you will configure a Kubernetes cluster using GitOps methodology t
 1. Copy the below command to any text editor
 
    ```
-   az k8s-configuration create --name cluster-config --cluster-name microk8s-cluster --resource-group $ResourceGroup --operator-instance-name cluster-config --operator-namespace cluster-config --repository-url https://github.com/<githubusername>/arc-k8s-demo --scope cluster --cluster-type connectedClusters
+   az k8sconfiguration create --name cluster-config --cluster-name microk8s-cluster --resource-group $ResourceGroup --operator-instance-name cluster-config --operator-namespace cluster-config --repository-url https://github.com/<githubusername>/arc-k8s-demo --scope cluster --cluster-type connectedClusters
    ```
 
 1. Then, replace as mentioned below and run the command in ubuntu-k8s VM SSH session that is opened in putty:
@@ -251,19 +257,20 @@ In this task, you will validate the SourceControlConfiguration to ensure success
    ```
    az k8sconfiguration show --resource-group $ResourceGroup --name cluster-config --cluster-name microk8s-cluster --cluster-type connectedClusters
    ```
-     > **Note**: that the sourceControlConfiguration resource is updated with compliance status, messages, and debugging information in the output.
+
+   > **Note**: that the sourceControlConfiguration resource is updated with compliance status, messages, and debugging information in the output.
 
    The output should include the following value as given here: ``"complianceState": "Installed"``
 
    ![](.././media/05.png) 
   
-2. In the Azure Portal which you have opened in the browser window, navigate to Resource group **azure-arc** RG-> Resource **microk8s-cluster** -> **GitOps**. Ensure that the operator state status is **Succeeded**.
+3. In the Azure Portal which you have opened in the browser window, navigate to Resource group **azure-arc** RG-> Resource **microk8s-cluster** -> **GitOps**. Ensure that the operator state status is **Succeeded**.
 
    ![](.././media/hyd27.png) 
   
 ## Task 7: Validate the Kubernetes configuration
 
-In this task, you will verify the successful creation of namespaces, deployments, and resources in the Kubernetes cluster. By executing provided kubectl commands, you'll confirm the creation of specified namespaces and the deployment of the Flux operator in the cluster-config namespace. Additionally, you'll explore other resources deployed as part of the configuration repository to ensure the proper functioning of GitOps.
+In this task, you will verify the successful creation of namespaces, deployments, and resources in the Kubernetes cluster. By executing the provided kubectl commands, you'll confirm the creation of specified namespaces and the deployment of the Flux operator in the cluster-config namespace. Additionally, you'll explore other resources deployed as part of the configuration repository to ensure the proper functioning of GitOps.
 
 After config-agent has installed the flux instance, resources held in the git repository should begin to flow to the cluster. 
 
@@ -275,7 +282,7 @@ After config-agent has installed the flux instance, resources held in the git re
    kubectl get ns --show-labels
    ```
  
-   The output shows that team-a, team-b, itops, and cluster-config namespaces have been created as shown:
+   The output shows that team-a, team-b, Gitops, and cluster-config namespaces have been created as shown:
   
    ![](.././media/07.png) 
    
@@ -299,7 +306,7 @@ After config-agent has installed the flux instance, resources held in the git re
 
 In this task, you'll access an Ubuntu-K8s VM through PuTTY and verify the presence of a specific pod using kubectl get pods command. Then, you'll navigate to your forked repository on GitHub (https://github.com/<yourGitHubaccountusername>/arc-k8s-demo) and locate the arc-k8s-demo.yaml file under cluster-apps. You'll edit this YAML file to modify the CPU request to 120, committing the changes to confirm the updated configuration in the repository.
 
-1.  Run the following command in the SSH session that is already opened to the ubuntu-k8s from putty and confirm that you are able to see the **arc-k8s-demo-** pod.
+1.  Run the following command in the SSH session that is already opened to the ubuntu-k8s from Putty and confirm that you are able to see the **arc-k8s-demo-** pod.
 
     ```
     kubectl get pods 
@@ -326,13 +333,14 @@ In this task, you'll confirm the deployment of changes made to the cluster decla
     ```
     kubectl get pods 
     ```
+
     ![](.././media/pods4.png) 
     
     Observe in the above image that the previous pod is terminated and a new pod is created based on the updated configuration.
 
       > **Note**: If you don't see any change, retry running the command after a couple of minutes
 
-2.  Replace the pod name that you copied in the previous step and run the command
+3.  Replace the pod name that you copied in the previous step and run the command
  
     ```
     kubectl get pod <podname> -o yaml
@@ -343,15 +351,6 @@ In this task, you'll confirm the deployment of changes made to the cluster decla
     
     Observe the CPU request value that you updated in the previous steps in the output as shown:
     
-    ![](.././media/pods6.png)   
-
-In this exercise, you have seen how to enable GitOps Configuration on connected K8s Cluster and how it works.
-
-   > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-   > - Navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
-   > - Hit the Validate button for the corresponding task. You can proceed to the next task if you receive a success message.
-   > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-   > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+    ![](.././media/pods6.png)
 
 Now, you can move on to the next exercise.
-
