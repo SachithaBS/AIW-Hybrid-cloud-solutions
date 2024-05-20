@@ -6,62 +6,6 @@ In addition to managing and monitoring their Kubernetes clusters, Contoso’s ce
 
 GitOps, as it relates to Kubernetes, is the practice of declaring the desired state of Kubernetes configuration (deployments, namespaces, etc.) in a Git repository followed by a polling and pull-based deployment of these configurations to the cluster using an operator. In this exercise, you will deploy a sample Kubernetes app using az k8sconfiguration command and gitops and also update the configuration in the repository which you have linked to the connected cluster and verify if the cluster is getting updated based on the changes made. You will be using the Kubernetes cluster with which you connected in the earlier exercise.
 
-## **Accessing Your Lab Environment**
- 
-1. You can see a virtual machine desktop 💻 (LabVM/ARCHOST) is loaded on the left side of your browser. Use this virtual machine throughout the workshop to perform the lab.
-
-    ![](.././media/GS14.png "Lab Environment")
-
-### **Virtual Machine & Lab Guide**
- 
-Your virtual machine is your workhorse throughout the workshop. The lab guide is your roadmap to success.
- 
-## **Exploring Your Lab Resources**
- 
-To get a better understanding of your lab resources and credentials, navigate to the **Environment Details** tab.
-
-   ![](.././media/20-05-2024.png)
- 
-## **Utilizing the Split Window Feature**
- 
-For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the Top right corner.
- 
-   ![](.././media/GS8.png)
- 
-## **Managing Your Virtual Machine**
- 
-Feel free to start, stop, or restart your virtual machine as needed from the **Resources** tab. Your experience is in your hands!
- 
-  ![](.././media/20-05-2024(1).png)
-
-## **Let's Get Started with Azure Portal**
- 
-1. In the **LabVM/ARCHost VM**, double-click on the Azure portal shortcut of the Microsoft Edge browser provided on the desktop.
- 
-    ![](.././media/GS1.png)
- 
-2. You'll see the **Sign into Microsoft Azure** tab. Here, enter your credentials:
- 
-   - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
- 
-      ![](.././media/GS2.png)
- 
-3. Next, provide your password:
- 
-   - **Password:** <inject key="AzureAdUserPassword"></inject>
- 
-      ![](.././media/GS1.png)
- 
-4. If you see the pop-up **Stay Signed in?**, click **No**.
-
-   ![](.././media/GS9.png)
-
-5. If you see the pop-up **You have free Azure Advisor recommendations!**, close the window to continue the lab.
-
-6. If a **Welcome to Microsoft Azure** popup window appears, click **Maybe Later** to skip the tour.
- 
-Now you're all set to explore the powerful world of technology. Feel free to reach out if you have any questions along the way. Enjoy your workshop! 
-
 ## Task 1: Fork the GitHub Arc K8s demo repository
 
 In this task, you'll navigate to the GitHub repository containing the Azure Arc-enabled Kubernetes demo configurations. By forking this repository to your own GitHub account, you'll have the necessary access to modify and deploy Kubernetes configurations using GitOps methodology. This step is essential for subsequent tasks involving configuration deployment and updates.
