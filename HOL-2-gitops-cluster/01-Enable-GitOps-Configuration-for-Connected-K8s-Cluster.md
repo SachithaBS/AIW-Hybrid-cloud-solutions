@@ -376,4 +376,4 @@ In this exercise, you enabled GitOps configuration on a connected Kubernetes clu
 - Make changes to cluster declarations in the Git repo.
 - Verify changes are deployed to the cluster.
 
-## You have successfully completed the lab. Click on Next >> to procced with next exercise.
+## You have successfully completed the Exercise. Click on Next >> to procced with next exercise.
