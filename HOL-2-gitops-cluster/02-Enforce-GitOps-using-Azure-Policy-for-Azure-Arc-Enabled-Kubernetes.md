@@ -94,3 +94,17 @@ In this task, you will select an existing policy definition and create a policy 
      ![](.././media/policy-5.png)
    
 >**Note:** You don't have to wait for the compliance state to change. You can move ahead to the next exercise and later come back to this page to review the state.
+
+>**Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>- Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+>- If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+>- If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+### Conclusion
+In this exercise, you enforced GitOps using Azure Policy for Azure Arc-enabled Kubernetes. By creating a policy assignment, you ensured new Kubernetes clusters are automatically connected to the Git repository for application deployment, eliminating manual DevOps intervention and streamlining cluster setup.
+
+### Review
+In this Exercise, you have completed:
+ - Create a Policy Assignment
+
+## You have successfully completed the Exercise. Click on Next >> to procced with next exercise.
