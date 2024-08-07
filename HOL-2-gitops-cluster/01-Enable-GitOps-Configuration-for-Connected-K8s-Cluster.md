@@ -18,7 +18,7 @@ In this task, you'll navigate to the GitHub repository containing the Azure Arc-
 
    ![](.././media/02.png)
 
-3.On the **Create a New Fork page**, make sure to **uncheck** the option that says **Copy the master branch only**. Then, click on **Create Fork**.
+3. On the **Create a New Fork page**, make sure to **uncheck** the option that says **Copy the master branch only**. Then, click on **Create Fork**.
 
    ![](.././media/U3.png)
 
