@@ -33,20 +33,23 @@ Feel free to start, stop, or restart your virtual machine as needed from the **R
 1. In the **LabVM/ARCHost VM**, double-click on the Azure portal shortcut of the Microsoft Edge browser provided on the desktop.
  
     ![](./media/portalicon.png)
+
+   >**Note**:If you don't find the browser shortcut for the **Azure portal**, open Microsoft Edge and search for **"portal.azure.com"**. Then, log in to the Azure 
+      portal.
  
-2. You'll see the **Sign into Microsoft Azure** tab. Here, enter your credentials:
+3. You'll see the **Sign into Microsoft Azure** tab. Here, enter your credentials:
  
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
  
       ![](./media/GS2.png)
  
-3. Next, provide your password:
+4. Next, provide your password:
  
    - **Password:** <inject key="AzureAdUserPassword"></inject>
  
       ![](./media/GS3.png)
 
-4. If **Action required** pop-up window appears, click on **Ask later**.
+5. If **Action required** pop-up window appears, click on **Ask later**.
 
     ![](./media/ask-later-01.png)
  

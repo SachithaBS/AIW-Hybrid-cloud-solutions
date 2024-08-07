@@ -35,3 +35,12 @@ In this task, you'll configure Azure Monitor for the Kubernetes cluster connecte
 7. In the same pane, filter the **Time range = Last 6 Hours (1)** and click on **Containers (2)**. You will be able to see the list of Containers that are linked to the pod and node which you have monitored in the previous steps.
 
    ![](.././media/hol2-ex3-7.png "azuremonitor")
+
+### Conclusion
+In this exercise, you configured Azure Monitor for containers on an Azure Arc-enabled Kubernetes cluster. This setup enabled proactive monitoring and troubleshooting by collecting and analyzing telemetry data through Container insights and a Log Analytics workspace.
+
+### Review
+In this Exercise, you have completed:
+ - Configuring Azure Monitor
+
+## You have successfully completed the lab
