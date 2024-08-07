@@ -366,6 +366,7 @@ In this task, you'll confirm the deployment of changes made to the cluster decla
 In this exercise, you enabled GitOps configuration on a connected Kubernetes cluster using Azure Arc to help Contoso uniformly deploy and manage containerized applications across multiple sites. You forked a GitHub repository, configured Azure CLI and PuTTY for an Ubuntu-K8s VM, onboarded a Kubernetes cluster to Azure Arc, and verified the connection. You set up GitOps, validated configurations, made changes to the cluster declarations, and ensured these changes were successfully deployed, streamlining application deployment across all clusters.
 
 ### Review
+In this Exercise, you have completed:
 - Fork the GitHub Arc K8s demo repository
 - Configuring Azure CLI and PuTTY for Ubuntu-K8s VM
 - Onboard Kubernetes Cluster to Azure Arc
