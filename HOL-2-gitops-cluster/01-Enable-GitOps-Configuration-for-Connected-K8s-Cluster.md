@@ -18,6 +18,10 @@ In this task, you'll navigate to the GitHub repository containing the Azure Arc-
 
    ![](.././media/02.png)
 
+3.On the **Create a New Fork page**, make sure to **uncheck** the option that says **Copy the master branch only**. Then, click on **Create Fork**.
+
+   ![](.././media/U3.png)
+
 ## Task 2: Configuring Azure CLI and PuTTY for Ubuntu-K8s VM
 
 In this task, you will configure access to an Ubuntu-K8s VM using PuTTY, upgrade Azure CLI packages, install dependencies, and set up the Azure Arc agent. Additionally, you'll copy essential variables from a file in the ARCHOST VM and utilize them to log into Azure. This setup is essential for subsequent operations and deployments within the Kubernetes cluster.
@@ -26,7 +30,7 @@ In this task, you will configure access to an Ubuntu-K8s VM using PuTTY, upgrade
 
     ![](.././media/startputty.png "Search Putty")
      
-1. In Putty Configuration tool, enter the **ubuntu-k8s** VM private IP - ```192.168.0.8```, make sure the Port value is ```22```. Once you entered the private IP of the **ubuntuk8s** VM, click on the Open to launch the terminal.
+1. In Putty Configuration tool, enter the **ubuntu-k8s** VM private IP - ```192.168.0.8```, make sure the Port value is ```22```. Once you entered the private IP of the **ubuntuk8s** VM, click on the **Open** to launch the terminal.
 
     ![](.././media/putty-enter-ip.png "Enter ubuntu-k8s VM private IP")
     
@@ -353,4 +357,23 @@ In this task, you'll confirm the deployment of changes made to the cluster decla
     
     ![](.././media/pods6.png)
 
-Now, you can move on to the next exercise.
+>**Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>- Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+>- If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+>- If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+### Conclusion
+In this exercise, you enabled GitOps configuration on a connected Kubernetes cluster using Azure Arc to help Contoso uniformly deploy and manage containerized applications across multiple sites. You forked a GitHub repository, configured Azure CLI and PuTTY for an Ubuntu-K8s VM, onboarded a Kubernetes cluster to Azure Arc, and verified the connection. You set up GitOps, validated configurations, made changes to the cluster declarations, and ensured these changes were successfully deployed, streamlining application deployment across all clusters.
+
+### Review
+- Fork the GitHub Arc K8s demo repository
+- Configuring Azure CLI and PuTTY for Ubuntu-K8s VM
+- Onboard Kubernetes Cluster to Azure Arc
+- Verify if the Kubernetes cluster is connected to Azure Arc
+- Configure Kubernetes Cluster with GitOps using Azure CLI
+- Validate the SourceControlConfiguration
+- Validate the Kubernetes configuration
+- Make changes to cluster declarations in the Git repo.
+- Verify changes are deployed to the cluster.
+
+## You have successfully completed the lab. Click on Next >> to procced with next exercise.
