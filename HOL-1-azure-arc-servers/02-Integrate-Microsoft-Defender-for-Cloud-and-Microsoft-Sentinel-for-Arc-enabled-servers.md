@@ -108,9 +108,11 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
     
 1. Now, click on the **Workbooks (1)** from the left pane under the **Threat Management** section, navigate to **Template** tab and search for ```Linux machines``` **(2)** then select **Linux machines (3)** from the search result and then click on **Save (4).**
     
-      ![](.././media/hybrid27.png)
+      ![](.././media/az-ex2-1.png)
     
-1. Then from the bottom-right corner of the Azure portal, click on **Yes** to save the workbook. 
+1. Then from the bottom-right corner of the Azure portal, click on **Yes** to save the workbook.
+
+   ![](.././media/az-ex2-2.png)
     
 1. Now, go back to **Microsoft Sentinel Overview** blade by clicking on **Overview(1)** under General section on the left. Disable the **New Overview(2)** toggle and then click on **INSIGHTSMETER(3)** to query the **ubuntu-k8s** VM insights. The count of **Events** could be different on your Microsoft Sentinel Dashboard.
 
