@@ -21,9 +21,9 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
 
     ![](.././media/gs1.png "Select Resource Group from Navigate Option")    
   
-1. Click on the **azure-arc** Resource group and confirm whether you have a total of 12 records to confirm all the below resources are deployed successfully.
+1. Click on the **azure-arc** Resource group and confirm whether you have a total of 13 records to confirm all the below resources are deployed successfully.
 
-    ![](.././media/resources-azure-arc-rg.png "Select hyper-v from desktop")
+    ![](.././media/az-ex1-1.png "Select hyper-v from desktop")
 
    * In the Resource group we have one **Virtual Machine**, **Kubernetes Service**, **Storage account** and **Log Analytics workspace** deployed.
 
@@ -61,11 +61,11 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
 
 1. From the start menu of the ARCHOST VM, search for **putty** and open it.
 
-    ![](.././media/startputty.png "Search Putty")
+    ![](.././media/az-ex1-2.png "Search Putty")
      
-1. In the Putty Configuration tool, enter the **ubuntu-k8s** VM private IP - ```192.168.0.8```, make sure the Port value is ```22```. Once you enter the private IP of the ubuntuk8s VM, click on the **Open** to launch the terminal.
+1. In the Putty Configuration tool, enter the **ubuntu-k8s** VM private IP - ```192.168.0.8```, **(1)** make sure the Port value is ```22``` **(2)**. Once you enter the private IP of the ubuntuk8s VM, click on the **Open (3)** to launch the terminal.
 
-    ![](.././media/putty-enter-ip.png "Enter ubuntu-k8s VM private IP")
+    ![](.././media/az-ex1-3.png "Enter ubuntu-k8s VM private IP")
     
 1. Enter the **ubuntu-k8s** VM username - ```demouser``` in **login as** and then hit **Enter**. Now, enter the password - ```demo@pass123``` and press **Enter**. Remember the password will be hidden and not be visible in the terminal.
 
@@ -111,8 +111,9 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
      az upgrade -y
      init 6
      ```
-    > **Note**: If prompted **Do you want to continue(Y/n)** click **Y** 
-    > **Note**: If in case, the above commands fail then please run the below-mentioned command:
+    > **Note**: If prompted **Do you want to continue(Y/n)** click **Y**
+    
+    > **Note**: If in case, the above commands fail then please run the below-mentioned command: 
     
      ```
      sudo apt-get install python3-pip
@@ -132,7 +133,7 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
 
 1. Once it is executed, you have declared the values of AppID, AppSecret, TenantID, SubscriptionID, ResourceGroup, and location, and then logged into Azure using the 7th line. You can also find the values of these variables in the **Environment Details** tab. These variables are required for the next steps.
 
-    ![](.././media/variableazlogin.png "azlogin")
+    ![](.././media/az-ex1-4.png "azlogin")
     
 1. Now, to download the Azure Arc installation package for Linux, run the below command:
 
@@ -164,7 +165,7 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
      
    ![](.././media/hybrid1.png "Connected to Arc")
 
-1. Let's verify the onboarding of **ubuntu-k8s** machine on Azure Arc from Azure portal. Switch to the browser tab where you have logged into the Azure portal already in step 1 and browse TO **azure-arc** resource group
+1. Let's verify the onboarding of **ubuntu-k8s** machine on Azure Arc from Azure portal. Switch to the browser tab where you have logged into the Azure portal already in step 1 and browse To **azure-arc** resource group
 
 1. Now click on Refresh from the azure-arc overview page.
 
