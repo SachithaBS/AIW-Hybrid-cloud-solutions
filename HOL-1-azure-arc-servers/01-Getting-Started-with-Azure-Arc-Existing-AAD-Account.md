@@ -19,7 +19,7 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
 
 1. Navigate to the **Resource Groups** in the Azure portal navigation section.
 
-    ![](.././media/navigate-resource-group.png "Select Resource Group from Navigate Option")    
+    ![](.././media/gs1.png "Select Resource Group from Navigate Option")    
   
 1. Click on the **azure-arc** Resource group and confirm whether you have a total of 12 records to confirm all the below resources are deployed successfully.
 
