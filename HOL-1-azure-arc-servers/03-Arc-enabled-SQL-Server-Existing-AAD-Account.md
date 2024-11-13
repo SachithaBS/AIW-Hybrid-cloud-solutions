@@ -16,7 +16,7 @@ In this exercise, you will be performing the following tasks:
 
 1. Navigate back to Azure Portal which you have already opened in the previous exercises.
       
-1. Click on the search blade at the top and search for ``SQL Server``, select **SQL Server - Azure Arc**.
+1. Click on the search blade at the top and search for ``SQL Server - Azure Arc`` **(1)**, select **SQL Server - Azure Arc (2)**.
  
    ![](.././media/hyd19.png "sqlsearch")
    
