@@ -1,4 +1,4 @@
-# Exercise 1: Getting Started with Azure Arc
+![image](https://github.com/user-attachments/assets/118f003f-15b6-4c61-8534-03bddee4bbf1)# Exercise 1: Getting Started with Azure Arc
 ### Estimated Duration: 60 Minutes
 In this exercise, you will learn how to onboard and manage on-premises resources and Kubernetes clusters using Azure Arc. The lab demonstrates how Azure Arc can help Contoso organize servers and Kubernetes clusters, govern them through Azure Policy, and monitor them centrally via Azure Monitor.
 
@@ -335,7 +335,7 @@ Policies can be applied to Arc-enabled servers the same way they are applied to 
 
     > **Note:** Make sure to update the Assignment name the same as mentioned above in step 8. Different names will result in failure in the validation of this task.
 
-1. On the **Parameters** tab under the **Log Analytics Workspace**, click on the Elipse **(...) (1)** then  select the existing workspace **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false" />** **(2)** from the available list and then click on **Select (3)**.
+1. On the **Parameters** tab under the **Log Analytics Workspace**, click on the Elipse **(...) (1)** then  select the existing workspace **LogAnalyticsWS-<inject key="DeploymentID/Suffix" />** **(2)** from the available list and then click on **Select (3)**.
 
     ![](.././media/hybrid6.png)
 
