@@ -559,26 +559,28 @@ In this task, let us learn how to connect to Azure Arc-enabled SQL Managed insta
 1. Enter the following on the connection details page:
 
    - **Connection type** : Select **Microsoft SQL Server (1)**
+  
+   - **Input type** : Select **Parameter (2)** 
    
-   - **Sever**: Paste the External Endpoint value of SQL Managed Instance which you copied earlier **(2)**
+   - **Sever**: Paste the External Endpoint value of SQL Managed Instance which you copied earlier **(3)**
 
      >**Note**: Make sure you have entered **IP Address** with **port number**.
    
-   - **Authentication type** : Select **SQL Login** from the drop-down options **(3)**
+   - **Authentication type** : Select **SQL Login** from the drop-down options **(4)**
    
-   - **User name** : Enter arcsqluser **(4)**
+   - **User name** : Enter arcsqluser **(5)**
      ```BASH
      arcsqluser
      ```
    
-   - **Password** : Enter Password.1!! **(5)**
+   - **Password** : Enter Password.1!! **(6)**
      ```BASH
      Password.1!!
      ```
    
-   Then click on **Connect (6)**
+   Then click on **Connect (7)**
   
-    ![](./media/ads-8.png "ADS")
+    ![](./media/az-ex8-3.png "ADS")
 
       **Note:** If you see a connection error message then click on **Enable trust server certificate.**   
    
