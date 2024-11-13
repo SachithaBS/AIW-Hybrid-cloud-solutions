@@ -129,7 +129,8 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
     az upgrade
     az extension update --name connectedk8s
     ```
-    
+     >**Note:** If your prompted to 'Do you want to continue? (Y/n) while updating 'az extension update --name connectedk8s'. Please type Y on the terminal.
+     
      > Wait for some time to Installation pop up to appear, Then check the **I accept the terms in License Agreement (1)** and click **Install(2)**
      >It may take some time, Wait till the installation process get completed.
      
@@ -167,6 +168,7 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
      ```
      az connectedk8s enable-features -n Arc-Data-Demo-DirectMode -g azure-arc --features cluster-connect custom-locations
      ```
+     >**Note:** If you are prompted to install the extension, type Y in the terminal and press Enter.
      
     The output should be similar to as shown below:**"Successfully enabled features: ['cluster-connect', 'custom-locations'] for the Connected Cluster Arc-Data-Demo-DirectMode"**
    
@@ -199,7 +201,7 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
      $clusterID = az connectedk8s show -n Arc-Data-Demo-DirectMode -g azure-arc  --query id -o tsv
      $clusterID
      ```
-     
+   > **Note:** After executing the above command you can verify it using 'Write-Output $clusterID' ,If the command was successful, you should see the cluster ID printed in the output.     
    > **Note:** The clusterID is stored in the $clusterID parameter and you will be using this parameter only in the later steps.
        
     ![zx](media/clusterid.png "Lab Environment")
@@ -209,7 +211,8 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
      ```
      $extensionID = az k8s-extension show --name azdata --cluster-type connectedClusters -c Arc-Data-Demo-DirectMode -g azure-arc --query id -o tsv
      $extensionID
-     ``` 
+     ```
+   > **Note:** After executing the above command you can verify it using 'Write-Output $extensionID' ,If the command was successful, you should see the extension ID printed in the output. 
    > **Note**: The extension resource ID is stored in the $extensionID parameter and you will be using this parameter only in the later steps.  
    
    ![sad](media/extensionid.png "Lab Environment")
@@ -402,35 +405,35 @@ Let's create an **Azure Arc-enabled SQL Managed Instance** using Azure Portal on
 
        - Data storage class: leave default
 
-       - Data volume size (in Gi): ```2```
+       - Data volume size (in Gi): ```2``` **(1)**
       
        - Data-logs storage class: leave ```default```
 
-       - Data-logs volume size (in Gi): ```1```
+       - Data-logs volume size (in Gi): ```1``` **(2)**
 
        - Logs storage class: Leave ```default```
 
-       - Logs volume size (in Gi): Enter ```1```
+       - Logs volume size (in Gi): Enter ```1``` **(3)**
 
        - Backup Storage class: leave ```default```
 
-       - Backups volume size (in Gi): ```1```
+       - Backups volume size (in Gi): ```1``` **(4)
 
       >**Note**: In the above section the (Gi) is referring to the storage in Gigabytes.  
       
-    After adding all the above details click on the **Apply** button.  
+    After adding all the above details click on the **Apply (5)** button.  
         
-      ![](./media/sqlman-5.png "Lab Environment")
+      ![](./media/az-ex7-1.png "Lab Environment")
    
 1. Under the Administrator account, enter the below details:
 
-     - **Managed Instance admin login**:  Enter **arcsqluser**
+     - **Managed Instance admin login**:  Enter **arcsqluser (1)**
    
-     - **Password**: Enter **Password.1!!**
+     - **Password**: Enter **Password.1!! (2)**
      
-     - **Confirm Password**: Enter **Password.1!!**
+     - **Confirm Password**: Enter **Password.1!! (3)**
 
-   After adding all the required details, click on the **Review + Create** button to review all details.
+   After adding all the required details, click on the **Review + Create (4)** button to review all details.
 
    ![sds](./media/sqlman-6.png "Lab Environment")
     
