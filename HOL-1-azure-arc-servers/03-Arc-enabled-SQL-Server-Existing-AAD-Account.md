@@ -189,7 +189,11 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/hybrid44.png "H1E3T3S19")
    
-   > **Note**: After enabling the assessment, wait for a few minutes to get it complete. 
+   > **Note**: After enabling the assessment, wait for a few minutes to get it complete.
+   
+   > **Note**: After some time even though if the assessments results are not shown up, Click on **Run assessment (1)** and wait for until it is **completed**. and click on the **result (2)**
+
+   ![](.././media/az-ex3-6.png "H1E3T3S19")
    
 1. Once the assessment is **completed**, click on it to see the results. The **Assessment results** will look like below:
 
