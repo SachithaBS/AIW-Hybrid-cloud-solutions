@@ -107,7 +107,7 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/hybrid38.png "H1E3T2S8")
    
-1. Select **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false" />**.
+1. Select **LogAnalyticsWS-<inject key="DeploymentID/Suffix" />**.
    
    ![](.././media/hybrid39.png "H1E3T2S8")
    
@@ -151,9 +151,9 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/opensqlvm.png "opensqlvm")
 
-1. On Connect to sqlvm box, scroll the bar towards **Small** to open the VM in the smallest window and then click on the **Connect** button.
+1. On Connect to sqlvm box, scroll the bar towards **Small (1)** to open the VM in the smallest window and then click on the **Connect (2)** button.
 
-   ![](.././media/scalsqlvm.png "scalsqlvm")
+   ![](.././media/az-ex3-2.png "scalsqlvm")
 
 1. Type password **demo@pass123** and press **Enter** button to login. Then, you can resize the sqlvm window size at your convenience.
    
