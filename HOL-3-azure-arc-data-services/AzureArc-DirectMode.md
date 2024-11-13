@@ -69,14 +69,14 @@ In this exercise, you will be performing the following tasks:
    az extension update --name customlocation
    az extension update --name arcdata 
    ```
-   >**Note:** If you encounter any error, navigate to '''C:\Users\arcadmin\.azure\cliextensions\arcdata''' and delete '''arcdata''' folder and re-perform step 8 and 9.
+   >**Note:** If you encounter any error, navigate to 'C:\Users\arcadmin\.azure\cliextensions\arcdata' and delete 'arcdata' folder and re-perform step 8 and 9.
    
 1. You can validate that you have all the required extensions with the latest versions by running the below command:
    
    ```
    az version
    ```     
-    ![](media/hybrid81.png "Lab Environment")
+    ![](media/hybrid81.png "Lab Environment") 
    
 1. After confirming that the required tools are installed, the next step is to register your subscription with Arc for Kubernetes.
 
@@ -122,14 +122,15 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
     ![](media/list-table.png "Lab Environment")
 
      >**Note**: If you encounter the following error, run the commands below to complete the Azure CLI installation process, and then try executing the previous command again.
+
+     ![](.././media/3.png) 
     
     ```
     az upgrade
     az extension update --name connectedk8s
     ```
-    ![](.././media/3.png)
-
-     >If promted the Installation pop up, check the **I accept the terms in License Agreement (1)** and click **Install(2)**
+    
+     > Wait for some time to Installation pop up to appear, Then check the **I accept the terms in License Agreement (1)** and click **Install(2)**
      >It may take some time, Wait till the installation process get completed.
      
      ![](.././media/hybrid57.png)
