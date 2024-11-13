@@ -163,7 +163,7 @@ In this exercise, you will be performing the following tasks:
    
    ![](.././media/H1E3T3S13.png "H1E3T3S13")
   
-1. On **Connect to server** pop-up, select **SQLVM** as Server name from drop-down and click on **Connect**.
+1. On **Connect to server** pop-up, select **SQLVM (1)** as Server name from drop-down and click on **Connect (2)**.
 
    ![](.././media/az-ex3-3.png "H1E3T3S14")
    
