@@ -143,9 +143,9 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/05.png) 
   
-2. In the Azure Portal which you have opened in the browser window, navigate to Resource group **azure-arc** -> Resource **microk8s-cluster** -> **GitOps** under settings. Ensure that the operator state status is **Succeeded**.
+2. In the Azure Portal which you have opened in the browser window, navigate to Resource group **azure-arc** -> Resource **microk8s-cluster** -> **GitOps (1)** under settings. Ensure that the operator state status is **Succeeded (2)**.
 
-   ![](.././media/hyd27.png) 
+   ![](.././media/az-ex5-1.png) 
   
 ## Task 4: Validate the Kubernetes configuration
 
@@ -190,11 +190,11 @@ After config-agent has installed the flux instance, resources held in the git re
 
 2. Browse to the **forked** repo of ```https://github.com/Azure/arc-k8s-demo```, which will be in the following format: ```https://github.com/<yourGitHubaccountusername>/arc-k8s-demo```
 
-3. Navigate to **cluster-apps->arc-k8s-demo.yaml** and edit the yaml file.
+3. Navigate to **cluster-apps->arc-k8s-demo.yaml (1)** and **edit (2)** the yaml file.
 
    ![](.././media/pods2.png)   
 
-4. Change the CPU request to **120** in line 32 and click on **Commit changes** to confirm the changes to the CPU request.
+4. Change the CPU request to **120** in line 32 and click on **Commit changes** at the top right corner, followed by **Commit changes** again, to confirm the changes to the CPU request.
 
    ![](.././media/pods3.png)
    
