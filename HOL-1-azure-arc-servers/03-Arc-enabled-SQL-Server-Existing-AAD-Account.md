@@ -165,11 +165,11 @@ In this exercise, you will be performing the following tasks:
   
 1. On **Connect to server** pop-up, select **SQLVM** as Server name from drop-down and click on **Connect**.
 
-   ![](.././media/H1E3T3S14.png "H1E3T3S14")
+   ![](.././media/az-ex3-3.png "H1E3T3S14")
    
-1. In the left pane, expand **Security** then **Logins**. In Logins, right-click on **NT AUTHORITY\SYSTEM** and click on **Properties**.
+1. In the left pane, expand **Security** then **Logins**. In Logins, right-click on **NT AUTHORITY\SYSTEM (1)** and click on **Properties (2)**.
 
-   ![](.././media/H1E3T3S15.png "H1E3T3S15")
+   ![](.././media/az-ex3-4.png "H1E3T3S15")
   
 1. In Login Properties pane, click on **Server Roles** then enable the **sysadmin** role and click on **Ok**.
 
