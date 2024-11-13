@@ -69,6 +69,7 @@ In this exercise, you will be performing the following tasks:
    az extension update --name customlocation
    az extension update --name arcdata 
    ```
+   >**Note:** If you encounter any error, navigate to '''C:\Users\arcadmin\.azure\cliextensions\arcdata''' and delete '''arcdata''' folder and re-perform step 8 and 9.
    
 1. You can validate that you have all the required extensions with the latest versions by running the below command:
    
