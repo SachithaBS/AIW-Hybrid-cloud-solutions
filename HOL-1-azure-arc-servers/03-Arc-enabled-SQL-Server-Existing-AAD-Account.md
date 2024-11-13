@@ -171,9 +171,9 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/az-ex3-4.png "H1E3T3S15")
   
-1. In Login Properties pane, click on **Server Roles** then enable the **sysadmin** role and click on **Ok**.
+1. In Login Properties pane, click on **Server Roles (1)** then enable the **sysadmin (2)** role and click on **Ok (3)**.
 
-   ![](.././media/H1E3T3S16.png "H1E3T3S16")
+   ![](.././media/az-ex3-5.png "H1E3T3S16")
  
 1. Then, Go to **SQLVM** SQL Server - Azure Arc resource select the **Best practices assessment (1)** under settings from the left pane and click on **Change license type (2)**.
    
@@ -185,7 +185,7 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/hybrid43.png "H1E3T3S18")
 
-1. Select the log Analytics Workspace as **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false" /> (1)** from the drop-down and click on **Enable assessment (2)**.
+1. Select the log Analytics Workspace as **LogAnalyticsWS-<inject key="DeploymentID/Suffix" /> (1)** from the drop-down and click on **Enable assessment (2)**.
 
    ![](.././media/hybrid44.png "H1E3T3S19")
    
