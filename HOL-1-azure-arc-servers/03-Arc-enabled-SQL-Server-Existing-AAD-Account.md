@@ -22,7 +22,7 @@ In this exercise, you will be performing the following tasks:
    
 1. Click on the **Add** button to create the **SQL Server- Azure Arc**. 
  
-   ![](.././media/ss2.png "sqlsearch")
+   ![](.././media/az-ex3-1.png "sqlsearch")
    
 1. In the Adding existing SQL Servers instances page, Click on **Connect Servers**.
 
@@ -77,9 +77,10 @@ In this exercise, you will be performing the following tasks:
 1. After changing the directory to **Lab files**, run the command given below:
 
    ```
-   .\Execute-RegisterSqlServerArc.ps1
+   .\Execute-RegisterSqlServerArc.ps1 
    ```
-     
+   > **Note** : If the above command fails, Navigate to the sqlvm within the Hyper-V manager and ensure it is in runnning state, If it is in Off state right click on the Vm and then select start. Once the sqlvm has started wait for some time and re-run the command again if you encounter any warnings or Errors that can be ignored.
+    
    > **Note** : This will initiate the execution of **RegisterSqlServerArc.ps1** script inside **sqlvm** that is deployed on Hyper-V.
 
 1. After running the command, you will see that the script started running.
@@ -88,11 +89,13 @@ In this exercise, you will be performing the following tasks:
   
 1. After some time, you will see that the script execution is completed. Make sure that you see the output as shown the image below.
 
-   ![](.././media/completed.png "sqlsearch")
+   ![](.././media/completed.png "sqlsearch") 
   
 1. Bring back the browser window where you had opened Azure Portal and search for **SQL Server -Azure Arc**. If you are already on that page, you will need to click on the Refresh button. On that page, you will see one resource **SQLVM** that we just created using the PowerShell script in the previous step.
 
    ![](.././media/hybrid36.png "sqlsearch")
+
+   > **Note** : Please wait for 2-3 minutes until the Mode turns from **Registered** to **Connected** state.
   
 1. Select the **SQLVM** resource and now you can see the dashboard of **SQLVM** SQL Server -Azure Arc from Azure Portal.
 
@@ -108,7 +111,7 @@ In this exercise, you will be performing the following tasks:
    
    ![](.././media/hybrid39.png "H1E3T2S8")
    
-1. Then select **Agents (1)** from the left side menu. Click on **Log Analytics agent instructions (2)** and copy the value of **Workspace ID (3)** and **Primary Key (4)** and save it into a Notepad or Notepad++ for later use.
+1. Then select **Agents (1)** under **Settings** from the left side menu. Click on **Log Analytics agent instructions (2)** and copy the value of **Workspace ID (3)** and **Primary Key (4)** and save it into a Notepad or Notepad++ for later use.
  
    ![](.././media/hybrid40.png "sqlsearch")
 
@@ -120,7 +123,7 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/hyd21.png "select-sql-vm")
     
-1. Click on the **Extension** button from the left side menu.
+1. Click on the **Extension** button under **Settings** from the left side menu.
  
    ![](.././media/hyd22.png "sqlsearch")
     
