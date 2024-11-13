@@ -18,11 +18,11 @@ In this exercise, you will be performing the following tasks:
 
 ## Task 1: Fork the GitHub Arc K8s demo repository
 
-1. Launch the following GitHub repository URL ```https://github.com/Azure/arc-k8s-demo```. In the upper right corner you will see **Sign in** and **Sign up** options, if you already have a github account then click on **Sign in**, otherwise **Sign up**.
+1. In a new browser tab, Launch the following GitHub repository URL ```https://github.com/Azure/arc-k8s-demo```. In the upper right corner you will see **Sign in** and **Sign up** options, if you already have a github account then click on **Sign in**, otherwise **Sign up**.
 
    ![](.././media/01.png)
    
-1. If you click on **Sign in**, You will be prompted to provide your **Github Username/email address (1)** and Password (2) then click on **Sign in (3)**
+1. If you click on **Sign in**, You will be prompted to provide your **Github Username/email address (1)** and Password **(2)** then click on **Sign in (3)**
    
    ![](.././media/hybrid47.png)
    
@@ -42,11 +42,11 @@ In this exercise, you will be performing the following tasks:
 
 1. From the start menu of the **ARCHOST** VM, search for **putty** and open it with a double click or another way.
 
-    ![](.././media/startputty.png "Search Putty")
+    ![](.././media/az-ex1-2.png "Search Putty")
      
-1. In Putty Configuration tool, enter the **ubuntu-k8s** VM private IP - ```192.168.0.8```, make sure the Port value is ```22```. Once you entered the private IP of the **ubuntuk8s** VM, click on the Open to launch the terminal.
+1. In Putty Configuration tool, enter the **ubuntu-k8s** VM private IP - ```192.168.0.8``` **(1)**, make sure the Port value is ```22``` **(2). Once you entered the private IP of the **ubuntuk8s** VM, click on the **Open (3)** to launch the terminal.
 
-    ![](.././media/putty-enter-ip.png "Enter ubuntu-k8s VM private IP")
+    ![](.././media/az-ex1-3.png "Enter ubuntu-k8s VM private IP")
     
 1. Enter the **ubuntu-k8s** vm username - ```demouser``` in **login as** and then hit **Enter**. 
 
