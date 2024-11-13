@@ -45,7 +45,7 @@ Now let's copy and restore the already taken backup file into your Azure SQL Man
    ```
    ![](media/newcp.png "Confirm")
 
-1. Now, to restore the AdventureWorks database, switch back to the Azure Data Studio and right click on the Connection of your connected SQL Managed Instance Server and click on **New Query**.
+1. Now, to restore the AdventureWorks database, switch back to the Azure Data Studio and right click on the Connection **(2)** of your connected SQL Managed Instance Server and click on **New Query (2)**.
 
    ![](media/newq.png "Confirm")
 
@@ -81,11 +81,11 @@ Now let's copy and restore the already taken backup file into your Azure SQL Man
 
 1. Then, from the left navigation menu select **Logs** **(1)** and on the Queries tab, click on the ```X``` **(2)** at the top right corner as shown in the below image.
 
-   ![](media/hybrid71.png "Confirm")
+   ![](media/az-ex9-1.png "Confirm")
    
 1. And then, click on ```>>``` icon to expand the Schema and Filter tab.
 
-    ![](media/logaw-2.png "Confirm")
+    ![](media/az-ex9-2.png "Confirm")
 
 1. Check for CustomLogs under the Tables section. If you do not see CustomLogs under Tables, refresh the page every 2 minutes until it is available.
      
