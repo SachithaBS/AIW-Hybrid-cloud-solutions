@@ -560,7 +560,7 @@ In this task, let us learn how to connect to Azure Arc-enabled SQL Managed insta
 
    - **Connection type** : Select **Microsoft SQL Server (1)**
   
-   - **Input type** : Select **Parameter (2)** 
+   - **Input type** : Select **Parameters (2)** 
    
    - **Sever**: Paste the External Endpoint value of SQL Managed Instance which you copied earlier **(3)**
 
