@@ -192,7 +192,7 @@ After config-agent has installed the flux instance, resources held in the git re
 
 3. Navigate to **cluster-apps->arc-k8s-demo.yaml (1)** and **edit (2)** the yaml file.
 
-   ![](.././media/pods2.png)   
+   ![](.././media/az-ex5-2.png)   
 
 4. Change the CPU request to **120** in line 32 and click on **Commit changes** at the top right corner, followed by **Commit changes** again, to confirm the changes to the CPU request.
 
