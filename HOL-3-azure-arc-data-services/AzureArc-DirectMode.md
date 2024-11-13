@@ -457,28 +457,44 @@ Now let us connect to the data controller using Azure Data Studio.
   
     ![](./images/15-05-2024(2).png "Azure Data Studio")
    
-2. On the Connect to Existing Controller page, provide the following details and click on **Connect**.
+2. On the Connect to Existing Controller page, provide the following details and click on **Connect (4)**.
 
-   - **Namespace**:
+   - **Namespace (1)**:
      ```BASH
      azure-arc
      ```
      
-   - **Cluster Context**:
+   - **Cluster Context (2)**:
      ```BASH    
      Arc-Data-Demo-DirectMode
      ```
      
-   - **Name** : Enter arcdc
+   - **Name (3)** : Enter arcdc
      ```BASH
      arcdc-direct
      ```  
         ![asdasd](./media/cncttonewdc.png "Azure Data Studio")
 
-        >**Note:** If you see any error message in **Cluster Context**, open the **command prompt** and run the below command.
+        >**Note:** If you see any error message in **Cluster Context**, Navigate to `C:\Users\arcadmin\.kube\config' and delete the config file .Then open the **Windows Powershell** and run the below command. After the command is executed Perform step 1 and 2.
+        
         ```BASH
         Import-AzAksCredential -ResourceGroupName $env:resourceGroup -Name Arc-Data-Demo-DirectMode -Force
         ```
+        
+        >**Note:** If you encounter error While connecting to the Azure Arc Data Controller, open Powershell window .Navigate to arcadmin using the below command.
+  
+        ```BASH
+         cd C:\Users\arcadmin
+        ```
+        - Uninstall and reinstall the arcdata extension to ensure all dependencies are properly set up using the below command
+  
+        ```BASH
+         az extension remove --name arcdata
+        ```
+        ```BASH
+         az extension add --name arcdata
+        ```
+        - Once the installation of the arcdata is successfull, close the Azure Data studio ,and perform Step 1 and 2
 
 3. Once the connection is successful, you can see the Azure Arc data controller listed under Azure Arc Controllers on the bottom left of the Azure Data Studio.
    
