@@ -26,7 +26,7 @@ In this exercise, you will be performing the following tasks:
     az login
     ```
     
-1. After running the above command a browser tab will open to login to the Azure portal.
+1. After running the above command a browser tab will open to login to the Azure portal. Select your user account <inject key="AzureAdUserEmail"></inject> in the browser page. If your user account does not appear, proceed with steps 3 and 4.
 
 1. On the **Sign into Microsoft Azure** tab you will see the login screen. Enter the following **Email/Username** and then click on **Next**.
 
