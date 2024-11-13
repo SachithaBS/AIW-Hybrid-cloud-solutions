@@ -44,7 +44,7 @@ In this exercise, you will be performing the following tasks:
 
     ![](.././media/az-ex1-2.png "Search Putty")
      
-1. In Putty Configuration tool, enter the **ubuntu-k8s** VM private IP - ```192.168.0.8``` **(1)**, make sure the Port value is ```22``` **(2). Once you entered the private IP of the **ubuntuk8s** VM, click on the **Open (3)** to launch the terminal.
+1. In Putty Configuration tool, enter the **ubuntu-k8s** VM private IP - ```192.168.0.8``` **(1)**, make sure the Port value is ```22``` **(2)**. Once you entered the private IP of the **ubuntuk8s** VM, click on the **Open (3)** to launch the terminal.
 
     ![](.././media/az-ex1-3.png "Enter ubuntu-k8s VM private IP")
     
