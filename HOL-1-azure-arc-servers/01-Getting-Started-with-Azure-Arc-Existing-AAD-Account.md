@@ -339,7 +339,7 @@ Policies can be applied to Arc-enabled servers the same way they are applied to 
 
     ![](.././media/hybrid6.png)
 
-1. On the **Remediation** blade, enable the checkbox for **Create a remediation task** and then click on the **Next** button.
+1. On the **Remediation (1)** blade, enable the checkbox for **Create a remediation task (2)** and then click on the **Next (3)** button.
 
     ![](.././media/az-ex1-6.png)
     
