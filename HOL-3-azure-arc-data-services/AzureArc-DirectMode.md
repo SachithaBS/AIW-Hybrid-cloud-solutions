@@ -473,7 +473,7 @@ Now let us connect to the data controller using Azure Data Studio.
      ```BASH
      arcdc-direct
      ```  
-        ![asdasd](./media/cncttonewdc.png "Azure Data Studio")
+        ![asdasd](./media/az-ex10-0.png "Azure Data Studio")
 
         >**Note:** If you see any error message in **Cluster Context**, Navigate to `C:\Users\arcadmin\.kube\config' and delete the config file .Then open the **Windows Powershell** and run the below command. After the command is executed Perform step 1 and 2.
         
