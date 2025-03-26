@@ -6,7 +6,7 @@ In this exercise, you will see how to configure Azure Monitor for containers and
 
 ## Objective
 
-In this exercise, you will be performing the following task:
+In this exercise, you will be performing the following tasks:
 
 - Task 1: Configuring Azure Monitor
 
@@ -20,7 +20,7 @@ In this exercise, you will be performing the following task:
 
    ![](.././media/hyd30.png "azuremonitor")
 
-3. On the Configure Container insights blade, click on the **Advanced settings (1)** drop down menu for the Log Analytics workspace select the **loganalyticsws-<inject key="DeploymentID/Suffix" /> (2)** from the dropdown and click on **Configure (3)**.
+3. On the Configure Container insights blade, click on the **Advanced settings (1)** drop-down menu for the Log Analytics workspace and select the **loganalyticsws-<inject key="DeploymentID/Suffix" /> (2)** from the dropdown and click on **Configure (3)**.
 
    ![](.././media/hybrid73.png "azuremonitor")
 
@@ -45,4 +45,3 @@ In this exercise, you will be performing the following task:
 In this exercise, you configured Azure Monitor for containers to track performance and gain insights for an Azure Arc-enabled Kubernetes resource, enabling enhanced monitoring and visibility.
 
 ### You have successfully completed the exercise. Click on **Next** from the bottom right corner to proceed with the next exercise.
-
