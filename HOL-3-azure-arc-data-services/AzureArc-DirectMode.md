@@ -79,7 +79,7 @@ In this exercise, you will be performing the following tasks:
      
    ![](.././media/hybrid57.png)
    
-   >Click on **Finish** to complete the process.
+   > Click on **Finish** to complete the process.
      
    ![](.././media/hybrid58.png)    
    
@@ -166,7 +166,7 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
     ```
     ![](.././media/3.png)
 
-     >If promted the Installation pop up, check the **I accept the terms in License Agreement (1)** and click **Install(2)**
+     >If promted the Installation pop up, check the **I accept the terms in License Agreement (1)** and click **Install (2)**
      >It may take some time, Wait till the installation process get completed.
      
      ![](.././media/hybrid57.png)
@@ -225,7 +225,7 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
    
     ![](media/hybrid62.png "Lab Environment")
    
-1. Now select **Extension** from the left side menu and check if the Install status is **Succeeded** or not. If it is not, please refresh after some time and then check.
+1. Now select **Extensions** under Settings from the left side menu and check if the Install status is **Succeeded** or not. If it is not, please refresh after some time and then check.
    
     ![](media/hybrid63.png "Lab Environment")
 
@@ -275,7 +275,7 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
   
     ![](./media/hybrid64.png "Lab Environment")
 
-1. Now search for the **Log Analytics workspace (1)** in the Azure portal and select **Log Analytics workspace (2)**.
+1. Now search for the **Log Analytics workspace (1)** in the Azure portal and select **Log Analytics workspaces (2)**.
      
     ![](./media/arc44.png "Lab Environment")
 
