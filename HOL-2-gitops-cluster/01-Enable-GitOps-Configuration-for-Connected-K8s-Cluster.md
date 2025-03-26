@@ -207,6 +207,7 @@ In this exercise, you will be performing the following tasks:
    ```
    az k8s-configuration flux show --resource-group $ResourceGroup --cluster-name microk8s-cluster --cluster-type connectedClusters --name cluster-config
    ```
+
      > **Note**: that the sourceControlConfiguration resource is updated with compliance status, messages, and debugging information in the output.
 
    The output should include the following value as given here: ``"complianceState": "Compliant"``
@@ -219,7 +220,7 @@ In this exercise, you will be performing the following tasks:
   
 ## Task 4: Validate the Kubernetes configuration
 
-After the config-agent has installed the flux instance, resources held in the git repository should begin to flow to the cluster. 
+After the config agent has installed the flux instance, resources held in the git repository should begin to flow to the cluster. 
 
    > ```Info```: Flux is the operator that makes GitOps happen in your cluster. It ensures that the cluster config matches the one in git and automates your deployments.
 
