@@ -333,7 +333,7 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
 
    * Confirm password: **Password.1!! (5)**
 
-   After entering all the required details click on **Next: Additional settings** (6)
+   After entering all the required details click on **Next: Additional settings** **(6)**
 
     ![](./media/dc-5.png "Lab Environment")
 
