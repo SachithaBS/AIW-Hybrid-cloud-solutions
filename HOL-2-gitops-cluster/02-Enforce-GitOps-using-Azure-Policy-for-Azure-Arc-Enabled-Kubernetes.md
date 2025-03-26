@@ -7,7 +7,7 @@ In this exercise, you will see how to use Azure Policy to enforce that each Azur
 
 ## Objective
 
-In this exercise, you will be performing the following task:
+In this exercise, you will be performing the following tasks:
 
 - Task 1: Create a Policy Assignment
 
@@ -31,7 +31,7 @@ In this task, you will select an existing policy definition and create a policy 
 
      ![](.././media/policy-3.png)
 
-      >**Note:** Wait for sometime to get the **go to Azure Policy** link. Click on some other options from left navigation pane and then navigate back to **Policies**.   
+      >**Note:** Wait for some time to get the **go to Azure Policy** link. Click on some other options from left navigation pane and then navigate back to **Policies**.   
 
 1. On the **Compliance** blade, click on **Assign policy**.
 
@@ -47,9 +47,9 @@ In this task, you will select an existing policy definition and create a policy 
 
 1. Click on **Parameters** blade.
 
-1. Provide the following details under **Parameters** tab
+1. Provide the following details under the **Parameters** tab
 
-    - uncheck the **Only show parameters that need input or review** box to see all the parameters
+    - Uncheck the **Only show parameters that need input or review** box to see all the parameters
     
       ![](.././media/HOL2-Ex2-T1-S9.1.png)
       
@@ -58,16 +58,19 @@ In this task, you will select an existing policy definition and create a policy 
       ```bash
       cluster-config
       ```
+
     - Operator instance name: **cluster-config (2)**
 
       ```bash
       cluster-config
       ```
+
     - Operator namespace: **cluster-config (3)**
 
       ```
       cluster-config
       ```
+
     - Operator scope: **cluster (4)**
 
     - Operator type: **Flux (5)**
@@ -77,11 +80,12 @@ In this task, you will select an existing policy definition and create a policy 
       ```
       --git-readonly
       ```
+
     - Repository URL: The forked repo name of **https://github.com/Azure/arc-k8s-demo (7)** that you are using for performing the lab. **Make sure to replace  **`Azure`** with your GitHubUsername**
 
     - Set the **Enable helm** option to **false (8)**.
 
-    - **Leave the other options set to default** and then click on **Next (9)** from the bottom of the page.
+    - **Leave the other options set to default** and then click on **Next (9)** at the bottom of the page.
      
        ![](.././media/assignpolicy2-2603.png)
   
@@ -93,13 +97,13 @@ In this task, you will select an existing policy definition and create a policy 
 
     ![](.././media/arc74.png)
 
-1. You will be redirected to the Policies page of the microk8s-cluster. Navigate to **Azure-Arc** Resource group -> **microk8s-cluster** -> **Policies** -> **go to Azure Policy**, if you are not already on that page.
+1. You will be redirected to the Policies page of the microk8s-cluster. Navigate to **Azure-Arc** Resource group -> **microk8s-cluster** -> **Policies** -> **go to Azure Policy** if you are not already on that page.
 
-1. You can check if your cluster is **compliant** or **not** against **“Configure Kubernetes clusters with specified GitOps configuration using no secrets”** policy you assigned in the previous step by looking at the Compliance State Column. It will be **Compliant** within 20 Minutes, sometimes it can take more than that as well. 
+1. You can check if your cluster is **compliant** or **not** against **“Configure Kubernetes clusters with specified GitOps configuration using no secrets”** policy you assigned in the previous step by looking at the Compliance State Column. It will be **Compliant** within 20 Minutes; sometimes, it can take more than that as well. 
 
      ![](.././media/policy-5.png)
      
-   > **Note**: If the compliance state shows as **Non-compliant** even after 10-15 minutes, you will need to create a remediation task in the next task and after some time you will see the complaint state changed to **Compliant**. If you didn't find the policy in the list, then search for ``GitOps`` in the **Search box** of the same pane.
+   > **Note**: If the compliance state shows as **Non-compliant** even after 10-15 minutes, you will need to create a remediation task in the next task, and after some time, you will see the complaint state changed to **Compliant**. If you didn't find the policy in the list, then search for ``GitOps`` in the **Search box** of the same pane.
    
 You don't have to wait for the compliance state to change. You can move ahead to the next exercise and later come back to this page to review the state.
 
@@ -115,4 +119,3 @@ You don't have to wait for the compliance state to change. You can move ahead to
 In this exercise, you used Azure Policy to enforce that specific GitOps configurations are applied to each Azure Arc-enabled Kubernetes cluster, ensuring consistent governance and compliance across the clusters.
 
 ### You have successfully completed the exercise. Click on **Next** from the bottom right corner to proceed with the next exercise.
-
