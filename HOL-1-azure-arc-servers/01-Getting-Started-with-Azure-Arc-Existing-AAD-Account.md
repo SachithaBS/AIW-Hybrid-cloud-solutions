@@ -400,7 +400,7 @@ In this task, let's configure and collect data from your Linux machine by enabli
 
     ![](.././media/hybrid32.png)
 
-1. On the Create new rule, enter the following details:
+1. On the Create new rule page, enter the following details:
 
     - Data collection rule name: Enter **data-<inject key="DeploymentID/Suffix" /> (1)**
     
@@ -428,11 +428,11 @@ In this task, let's configure and collect data from your Linux machine by enabli
 
     >**Note:** If the MMA installation deployment fails, follow the given workaround here: [Enabling insights workaround](https://github.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/blob/FY-23/HOL-1-azure-arc-servers/Workaroun_MMA_Installation.md)
 
-1. Once the deployment has succeeded, go back to the **Insights** blade for ubuntu-k8s VM and then refresh the page once, you may have to re-click on the **Enable** button and refresh the page again to see the Insights. Data will take around 10 minutes to be routed to the Insights from your Linux machine: ubuntu-k8s.
+1. Once the deployment has succeeded, go back to the **Insights** blade for ubuntu-k8s VM and then refresh the page once; you may have to re-click on the **Enable** button and refresh the page again to see the Insights. Data will take around 10 minutes to be routed to the Insights from your Linux machine: ubuntu-k8s.
 
     ![](.././media/hyd15.png)
 
-    > Note: By this time, the Compliance state of the policy also might have changed. While you wait for the insights to come up, you can check the compliance state in Policies under **Operations** section on the left or you can move on to the next page and come back later to view the insights.   
+    > Note: By this time, the Compliance state of the policy also might have changed. While you wait for the insights to come up, you can check the compliance state in Policies under **Operations** section on the left, or you can move on to the next page and come back later to view the insights.   
 
 1. Once the Insights are ready, click on the **Performance** blade to review Logical Disk Operations, CPU Utilization, Available Memory, Logical Disk IOPS, Logical Disk MB/s, and much more. It is exciting to see the **graphical representation** of VM performance, whether the VM is deployed on-prem, on other cloud provider platforms, or on any edge technologies.
 
@@ -442,17 +442,9 @@ In this task, let's configure and collect data from your Linux machine by enabli
 
     ![](.././media/arc31.png)
 
-    >**Note:** Sometimes it may take more time to show the running **Processes**. Click on **Refresh**.    
+    >**Note:** Sometimes, it may take more time to show the running **Processes**. Click on **Refresh**.
 
-    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-    
-    - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
-    - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-    - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
- 
-    <validation step="936f9acc-302b-4616-b597-f8ce17fe1949" />
-
-    >**Note:** This might take some time to display a "Success" status. Please check back once after completing Exercise 3.
+    >**Note:** It might take some time to display a "Success" status. Please check back once after completing Exercise 3.
  
 ## Summary 
 
