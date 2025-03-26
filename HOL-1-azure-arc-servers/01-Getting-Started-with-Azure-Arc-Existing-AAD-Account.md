@@ -443,8 +443,6 @@ In this task, let's configure and collect data from your Linux machine by enabli
     ![](.././media/arc31.png)
 
     >**Note:** Sometimes, it may take more time to show the running **Processes**. Click on **Refresh**.
-
-    >**Note:** It might take some time to display a "Success" status. Please check back once after completing Exercise 3.
  
 ## Summary 
 
