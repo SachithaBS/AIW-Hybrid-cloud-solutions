@@ -19,7 +19,7 @@ In this exercise, you will be performing the following tasks:
 
 ## Task 1: Fork the GitHub Arc K8s demo repository
 
-1. Launch the following GitHub repository URL `https://github.com/Azure/arc-k8s-demo`. In the upper right corner, you will see **Sign in** and **Sign up** options. If you already have a github account, then click on **Sign in**; otherwise, click **Sign up**.
+1. Launch the following GitHub repository URL `https://github.com/CloudLabsAI-Azure/arc-k8s-demo`. In the upper right corner, you will see **Sign in** and **Sign up** options. If you already have a github account, then click on **Sign in**; otherwise, click **Sign up**.
 
    ![](.././media/01.png)
    
@@ -103,7 +103,7 @@ In this exercise, you will be performing the following tasks:
      sudo apt-get install python3-pip
      ```
 
-1. Open a new **Putty** session, re-perform the steps from step 2 to step 6 of the same task to get the upgraded packages and then continue from step 9.
+1. Open a new **Putty** session, re-perform the steps from step 2 to step 7 of the same task to get the upgraded packages and then continue from step 9.
 
 1. Next, you have to navigate back to the Desktop of the provided virtual Machine ARCHOST VM 💻 and then click on the `installArcAgentLinux.txt` file to open it.
 
@@ -128,7 +128,7 @@ In this exercise, you will be performing the following tasks:
 
      >**Note:** Wait until the command runs successfully.
 
-1. Once the `microk8s status --wait-ready` command starts running, wait for **10-15 minutes** before proceeding to the next command. It needs time for the API server to respond and for at least one node to be registered.
+1. Once `microk8s status --wait-ready` command start to run, wait for `10-15 minutes` let it run before proceeding to the next command. After that click on **Ctrl+Z** to terminate.  
 
 1. Run the below command to install `microsoft.flux` extension.
 
@@ -136,17 +136,21 @@ In this exercise, you will be performing the following tasks:
    az k8s-extension create --extension-type microsoft.flux --configuration-settings multiTenancy.enforce=false -c microk8s-cluster -g $ResourceGroup -n flux -t connectedClusters
    ```
 
-   > **Note:** If prompted **Do you want to continue(Y/n)** click **Y**. 
+    >**Note**: Enter `Y` to `The command requires extension k8s-extension, Do you want to install`.   
 
-1. On the Azure portal, type **microk8s-cluster (1)** in the search box and select **microk8s-cluster (2)** from the results.
+1. Copy the below command to any text editor. You have to replace **\<githubusername>** in the below command with the `username of the GitHub account` to which you had forked the repository.
 
-   ![](.././media/25032025(11).png "azlogin")
+   ```
+   az k8s-configuration flux create   -g $ResourceGroup   -c microk8s-cluster   -n cluster-config   -t connectedClusters   --scope cluster   --namespace cluster-config   -u https://github.com/<githubusername>/arc-k8s-demo  --branch main --kustomization name=cluster-config-kustomization
+   ```
 
-1. On the **microk8s-cluster** resource, select **GitOps (1)** under the Settings section, click **+ Create (2)**.
+    >**Note**: Enter `Y` to `The command requires extension k8s-configuration, Do you want to install` 
 
-   ![](.././media/25032025(12).png "azlogin")
-
-1. On the **Basics** tab of create a GitOps page, enter the following details and click on the **Next (4)** button.
+1. Then, run the command in ubuntu-k8s VM SSH session that is opened in putty:
+  
+    ![](.././media/arc32.png) 
+   
+     > **Note**: Wait for 5 minutes before performing the next step
 
    - Configuration name: **cluster-config (1)**
 
