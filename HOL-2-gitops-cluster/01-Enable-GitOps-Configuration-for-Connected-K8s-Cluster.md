@@ -80,13 +80,29 @@ In this exercise, you will be performing the following tasks:
    
       ```
       apt update -y
-      curl https://bootstrap.pypa.io/get-pip.py > get-pip.py
+      ```
+      ```
+      curl -O https://bootstrap.pypa.io/pip/3.8/get-pip.py
+      ```
+      ```
       apt install pip -y
+      ```
+      ```
       python3 get-pip.py
+      ```
+      ```
       python3 -m pip install -U pip
+      ```
+      ```
       python3 -m pip install --upgrade pip --target /opt/az/lib/python3.6/site-packages/
+      ```
+      ```
       pip install azure-common
+      ```
+      ```
       az upgrade -y
+      ```
+      ```
       init 6 
       ```
 
