@@ -80,30 +80,16 @@ In this exercise, you will be performing the following tasks:
    
       ```
       apt update -y
-      ```
-      ```
-      curl -O https://bootstrap.pypa.io/pip/3.8/get-pip.py
-      ```
-      ```
-      apt install pip -y
-      ```
-      ```
+      apt install curl -y
+      apt install pip
+      curl -sS https://bootstrap.pypa.io/pip/3.8/get-pip.py -o get-pip.py
       python3 get-pip.py
-      ```
-      ```
-      python3 -m pip install -U pip
-      ```
-      ```
-      python3 -m pip install --upgrade pip --target /opt/az/lib/python3.6/site-packages/
-      ```
-      ```
-      pip install azure-common
-      ```
-      ```
-      az upgrade -y
-      ```
-      ```
-      init 6 
+      # Upgrade pip globally (for current Python version, e.g., 3.8+)
+      python3 -m pip install --upgrade pip      
+      python3 -m pip install --upgrade pip --target /opt/az/lib/python3.8/site-packages/
+      python3 -m pip install azure-common
+      az upgrade --yes
+      init 6 #TO restart
       ```
 
 1. Open a new **Putty** session, re-perform the steps from step 2 to step 6 of the same task to get the upgraded packages and then continue from step 9.
@@ -123,10 +109,14 @@ In this exercise, you will be performing the following tasks:
 1. Run the below commands one after the other to update the kubernate version.    
 
    ```
-   sudo snap refresh microk8s --channel=1.27/stable
+   sudo microk8s stop
+   sudo snap remove microk8s
+   sudo snap install microk8s --classic --channel=1.33/stable
+
    ```
 
    ```
+   microk8s start
    microk8s status --wait-ready
    ```
 
@@ -137,6 +127,11 @@ In this exercise, you will be performing the following tasks:
      > **Note:** If `microk8s status --wait-ready` takes more than **20–30 minutes** to execute, press **Ctrl+Z** to terminate it and proceed further.
 
 1. Run the below command to install `microsoft.flux` extension.
+
+   ```
+   az config set extension.dynamic_install=yes
+   az config set extension.dynamic_install_allow_preview=true
+   ```
 
    ```
    az k8s-extension create --extension-type microsoft.flux --configuration-settings multiTenancy.enforce=false -c microk8s-cluster -g $ResourceGroup -n flux -t connectedClusters
@@ -183,6 +178,7 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/cs2.png) 
   
+     
 1. In the Azure Portal which you have opened in the browser window, navigate to Resource group **azure-arc** -> Resource **microk8s-cluster** -> **GitOps** under settings. Ensure that the operator state status is **Succeeded**.
 
    ![](.././media/arc34.png) 
