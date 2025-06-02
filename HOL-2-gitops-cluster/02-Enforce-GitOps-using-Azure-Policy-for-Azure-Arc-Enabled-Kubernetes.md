@@ -19,18 +19,18 @@ In this task, you will select an existing policy definition and create a policy 
 1. On the **Policies** blade, click on **Enable extension** to onboard to Azure Policy for Azure Arc-enabled Kubernetes clusters.
 
      ![](.././media/HOL2-Ex2-T1-S3.png)
-     
-1. Now, click on **go to Azure Policy**  to navigate to **Compliance** blade.
 
-     ![](.././media/policy-3.png)
+1. In the Azure Portal, use the top search bar to search for and select **Policy**.
+
+   ![](.././media/policy-3a.png)
 
 1. On the **Compliance** blade, click on **Assign policy**.
 
-    ![](.././media/policy-4.png)
+   ![](.././media/policy-3b.png)
 
 1. On the Basics section, click on the ellipses (…) to the right of **Policy definition**.
 
-    ![](.././media/HOL2-Ex2-T1-S6.png)
+    ![](.././media/HOL2-Ex2-T1-S6a.png)
 
 1. In the **Search (1)** window for available definitions, type ```GitOps``` and select the one named **Configure Kubernetes clusters with specified GitOps configuration using no secrets (2)**. Then, click on the **Add (3)** button below.
 
@@ -42,7 +42,7 @@ In this task, you will select an existing policy definition and create a policy 
 
     - uncheck the **Only show parameters that need input or review** box to see all the parameters
     
-      ![](.././media/HOL2-Ex2-T1-S9.1.png)
+      ![](.././media/HOL2-Ex2-T1-S9.1a.png)
       
     - Configuration resource name: **cluster-config**
 
@@ -75,32 +75,93 @@ In this task, you will select an existing policy definition and create a policy 
 
     - **Leave the other options set to default**
      
-      ![](.././media/HOL2-Ex2-T1-S9.2.png)
+      ![](.././media/HOL2-Ex2-T1-S9.2a.png)
 
 1. Then, Click on **Next** from the bottom of the page.
    
 1. Select the **Create a remediation task** check box and then click **Review + create**, skip the Non-compliance messages.
 
-    ![](.././media/hol2ss1.png)
+    ![](.././media/hol2ss1a.png)
      
 1. Click **Create** to start the creation of policy and remediation tasks.
 
-    ![](.././media/HOL2-Ex2-T1-S12.png)
+### Create Policy for Flux.
 
-1. You will be redirected to the Policies page of the microk8s-cluster. Navigate to **Azure-Arc RG** -> **microk8s-cluster** -> **Policies** -> **go to Azure Policy**, if you are not already on that page.
+You’ll assign an Azure Policy that deploys Flux v2 GitOps configurations to Azure Arc-enabled Kubernetes clusters. The policy automatically installs Flux and connects it to a public Git repo on all matching clusters in scope.
 
-1. You can check if your cluster is **compliant** or **not** against **“Configure Kubernetes clusters with specified GitOps configuration using no secrets”** policy you assigned in the previous step by looking at the Compliance State Column. It will be **Compliant** within 20 Minutes, sometimes it can take more than that as well. 
+1. Now create a new policy for **Flux**
 
-     ![](.././media/policy-5.png)
+1. On the **Compliance** blade, click on **Assign policy**.
+
+   ![](.././media/policy-3b.png)
+
+1. On the Basics section, click on the ellipses (…) to the right of **Policy definition**.
+
+    ![](.././media/HOL2-Ex2-T1-S6a.png)
+
+1. In the **Search (1)** window for available definitions, type ```GitOps``` and select the one named **Configure Kubernetes clusters with Flux v2 configuration using Public Git repository (2)**. Then, click on the **Add** button below.
+
+    ![](.././media/hyd29a.png)
+
+1. Click on **Parameters** blade.
+
+1. Provide the following details under **Parameters** tab
+
+    - uncheck the **Only show parameters that need input or review** box to see all the parameters
+    
+      ![](.././media/HOL2-Ex2-T1-S9.1a.png)
+      
+    - Configuration Instance name: **cluster-config**
+
+      ```bash
+      cluster-config
+      ```
+    - Configuration Namespace: **cluster-config**
+
+      ```bash
+      cluster-config
+      ```
+    - Configuration Scope: **cluster**
+    
+    - Repository URL: The forked repo name of **https://github.com/<githubusername>/arc-k8s-demo** that you are using for performing the lab.
+
+      ```
+      https://github.com/<githubusername>/arc-k8s-demo
+      ```
+
+    - **Leave the other options set to default**
+     
+      ![](.././media/HOL2-Ex2-T1-S9.2ab.png)
+
+1. Then, Click on **Next** from the bottom of the page.
+   
+1. Select the **Create a remediation task** check box and then click **Review + create**, skip the Non-compliance messages.
+
+    ![](.././media/hol2ss1a.png)
+     
+1. Click **Create** to start the creation of policy and remediation tasks.
+
+1. You will be redirected to the Policies page of the microk8s-cluster. Navigate to **Azure-Arc RG** -> **microk8s-cluster** -> **Policies** -> **go to Azure Policy**.
+
+     ![](.././media/policy-3.png)
+
+1. You can check if your cluster is **compliant** or **not** against policy you assigned in the previous step by looking at the Compliance State Column. It will be **Compliant** or **not** within 10 Minutes, sometimes it can take more than that as well. 
+
+    ![](.././media/policy-5b.png)
    
 >**Note:** You don't have to wait for the compliance state to change. You can move ahead to the next exercise and later come back to this page to review the state.
 
->**Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
->- Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
->- If not, carefully read the error message and retry the step, following the instructions in the lab guide.
->- If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+      
+   - If you receive an InProgress message, you can hit refresh to see the final status.
+   - If you receive a success message, you can proceed to the next task.
+   - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+   - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+<validation step="2c420ce1-9b03-4b85-985a-fc827ac99b75" />
 
 ### Conclusion
+
 In this exercise, you enforced GitOps using Azure Policy for Azure Arc-enabled Kubernetes. By creating a policy assignment, you ensured new Kubernetes clusters are automatically connected to the Git repository for application deployment, eliminating manual DevOps intervention and streamlining cluster setup.
 
 ### Review

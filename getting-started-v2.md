@@ -52,7 +52,7 @@ The architecture for this lab involves the following key components:
  
 1. You can see a virtual machine desktop 💻 (LabVM/ARCHOST) is loaded on the left side of your browser. Use this virtual machine throughout the workshop to perform the lab.
 
-    ![](./media/ngs1n.png "Lab Environment")
+   ![](./media/ngs1na.png "Lab Environment")
 
 ### **Virtual Machine & Lab Guide**
  
@@ -62,19 +62,19 @@ Your virtual machine is your workhorse throughout the workshop. The lab guide is
  
 To get a better understanding of your lab resources and credentials, navigate to the **Environment Details** tab.
 
-   ![](./media/env11.png)
+   ![](./media/env11a.png)
  
 ## **Utilizing the Split Window Feature**
  
 For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the Top right corner.
  
-   ![](./media/GS8.png)
+   ![](./media/GS8a.png)
  
 ## **Managing Your Virtual Machine**
  
 Feel free to start, stop, or restart your virtual machine as needed from the **Resources** tab. Your experience is in your hands!
  
-  ![](./media/GS5.png)
+![](./media/GS5a.png)
 
 ## **Let's Get Started with Azure Portal**
  
