@@ -76,7 +76,7 @@ In this exercise, you will be performing the following tasks:
    demo@pass123
    ```
     
- 1. Run the below commands to upgrade the az packages and az module. 
+ 1. Run the below commands to upgrade the az packages and az module. Make sure to run each command one at a time
    
       ```
       apt update -y
@@ -118,6 +118,7 @@ In this exercise, you will be performing the following tasks:
    ```
    microk8s start
    microk8s status --wait-ready
+   microk8s enable dns
    ```
 
     ![](.././media/arc72.png "azlogin")   
@@ -126,12 +127,26 @@ In this exercise, you will be performing the following tasks:
 
      > **Note:** If `microk8s status --wait-ready` takes more than **20–30 minutes** to execute, press **Ctrl+Z** to terminate it and proceed further.
 
-1. Run the below command to install `microsoft.flux` extension.
+1. Run the below command to Export MicroK8s cluster kubeconfig file path.
+
+   ```
+   microk8s config view > ~/.kube/microk8s
+   ```
+
+1. Run the below command to enable automatic installation of missing Azure CLI extensions, including preview extensions.
 
    ```
    az config set extension.dynamic_install=yes
    az config set extension.dynamic_install_allow_preview=true
    ```
+
+1. Run the below command to Connect the cluster to Azure Arc
+
+   ```
+   az connectedk8s connect --name microk8s-cluster --resource-group azure-arc  --kube-config ~/.kube/microk8s --kube-context microk8s --tags 'Project=jumpstart_azure_arc_k8s' --correlation-id "d009f5dd-dba8-4ac7-bac9-b54ef3a6671a"
+   ```
+
+1. Run the below command to install `microsoft.flux` extension.
 
    ```
    az k8s-extension create --extension-type microsoft.flux --configuration-settings multiTenancy.enforce=false -c microk8s-cluster -g $ResourceGroup -n flux -t connectedClusters
@@ -142,8 +157,9 @@ In this exercise, you will be performing the following tasks:
 1. Copy the below command to any text editor. You have to replace **\<githubusername>** in the below command with the `username of the GitHub account` to which you had forked the repository.
 
    ```
-   az k8s-configuration flux create   -g $ResourceGroup   -c microk8s-cluster   -n cluster-config   -t connectedClusters   --scope cluster   --namespace cluster-config   -u https://github.com/<githubusername>/arc-k8s-demo  --branch master --kustomization name=cluster-config-kustomization
+   az k8s-configuration flux create -g $ResourceGroup -c microk8s-cluster -n cluster-config -t connectedClusters --scope cluster --namespace cluster-config -u https://github.com/<githubusername>/arc-k8s-demo --branch master --kustomization name=cluster-config-kustomization
    ```
+
 
     >**Note**: Enter `Y` to `The command requires extension k8s-configuration, Do you want to install`.   
 
@@ -162,6 +178,16 @@ In this exercise, you will be performing the following tasks:
      > *ConfigMap*: team-a/endpoints
      
      > The config agent polls Azure for new or updated configurations.
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+      
+   - If you receive an InProgress message, you can hit refresh to see the final status.
+   - If you receive a success message, you can proceed to the next task.
+   - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+   - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+<validation step="7af13c5d-edd3-49ed-b826-79a1f76e2512" />
+
 
 ## Task 3: Validate the FluxConfiguration - Read Only
 

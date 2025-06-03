@@ -16,7 +16,7 @@ In this task, you'll configure Azure Monitor for the Kubernetes cluster connecte
 
    ![](.././media/hyd30.png "azuremonitor")
 
-3. On the Configure Container insights blade, for the Log Analytics workspace select the **loganalyticsws- <inject key="DeploymentID/Suffix" />** from the dropdown and click on **Configure**.
+3. On the Configure Container insights blade, for the Log Analytics workspace select the **loganalyticsws-<inject key="DeploymentID" enableCopy="false"/>** from the dropdown and click on **Configure**.
 
    ![](.././media/hyd31.png "azuremonitor")
 
@@ -24,17 +24,17 @@ In this task, you'll configure Azure Monitor for the Kubernetes cluster connecte
 
 5. In the Insights pane, refresh the page and filter the **Time range = Last 6 Hours (1)**. Click on **Cluster (2)** and review the insights. Now that your cluster is being monitored, you can watch the monitoring telemetry for the cluster, nodes and pods.
 
-   ![](.././media/hol2-ex3-4.png "azuremonitor")
+   ![](.././media/hol2-ex3-4a.png "azuremonitor")
 
 6. In the same pane, filter the **Time range = Last 6 Hours (1)** and click on **Nodes (2)** and select **ubuntu-k8s**. Here you can observe that the ubuntu-k8s server azure-arc node is listed below, which defines the integration of Azure Arc connected cluster with Azure Monitor for Containers.
 
-   ![](.././media/hol2-ex3-5.png "azuremonitor")
+   ![](.././media/hol2-ex3-5a.png "azuremonitor")
 
-   ![](.././media/hol2-ex3-6.png "azuremonitor")
+   ![](.././media/hol2-ex3-6a.png "azuremonitor")
 
 7. In the same pane, filter the **Time range = Last 6 Hours (1)** and click on **Containers (2)**. You will be able to see the list of Containers that are linked to the pod and node which you have monitored in the previous steps.
 
-   ![](.././media/hol2-ex3-7.png "azuremonitor")
+   ![](.././media/hol2-ex3-7a.png "azuremonitor")
 
 ### Conclusion
 In this exercise, you configured Azure Monitor for containers on an Azure Arc-enabled Kubernetes cluster. This setup enabled proactive monitoring and troubleshooting by collecting and analyzing telemetry data through Container insights and a Log Analytics workspace.
