@@ -12,7 +12,7 @@ In this exercise, you will be performing the following task:
 
 1. Navigate to the home page of the [Azure Portal](https://portal.azure.com/#home), then search for **Automanage (1)** in the search box and select **Automanage (2)**.
 
-   ![](.././media/arc27.png "searchautoamanage")
+   ![](.././media/ex4.task1.1.png "searchautoamanage")
    
 2. From the Automanage pane, select **Automanage machines (1)** under Machine best practices and click on **+ Enable on existing machine (2)**.
 
@@ -28,11 +28,11 @@ In this exercise, you will be performing the following task:
 
 5. Click on **Create**.
 
-   ![](.././media/HOL1-EX4-5.png "searchautoamanage")
+   ![](.././media/ex4.task1.2.png "searchautoamanage")
 
 6. Once the Configuration profile assignment is completed successfully, it will take around `20-30 minutes` to get the Status as Conformant.
 
-   ![](.././media/gg-4-2.png "searchautoamanage")
+   ![](.././media/ex4.task1.3.png "searchautoamanage")
 
 7. You can proceed with the next task and review the status later.
 
@@ -41,3 +41,5 @@ In this exercise, you will be performing the following task:
 In this task, you used Azure Automanage to enroll and configure a VM, applying the "Azure best practices - Dev/Test" profile. This setup automates lifecycle management, including security, updates, change tracking, and monitoring through tools like Azure Security Centre and Log Analytics.
 
 ### You have successfully completed the exercise. Click on **Next** from the bottom right corner to proceed with the next exercise.
+
+![](.././media/next4.png)

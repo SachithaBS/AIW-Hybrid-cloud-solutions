@@ -25,7 +25,7 @@ In this exercise, you will be performing the following tasks:
    
 1. If you click on **Sign in**, You will be prompted to provide your **Github Username/email address (1)** and Password (2) then click on **Sign in (3)**
    
-   ![](.././media/hybrid47.png)
+   ![](.././media/ex5.task1.1.png)
    
 1. Then you will receive an **device verification code** to your email, enter that code **(1)** and then click on **Verify (2)**.
 
@@ -35,17 +35,17 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/02.png)
    
-1. On **Create a new fork**, disable the **Copy the master branch only (1)** and click **Create fork(2).**
+1. On **Create a new fork**, disable the **Copy the master branch only (1)** and click **Create fork (2).**
    
-   ![](.././media/hybrid48.png)   
+   ![](.././media/ex5.task1.2.png)   
 
 ## Task 2: Deploy App using az k8s configuration
 
 1. Using the Azure CLI extension for **k8sconfiguration**, link connected cluster to personal git repository. Provide this configuration a name **cluster-config**, instruct the agent to deploy the operator in the **cluster-config** namespace, and give the operator **cluster-admin** permissions. 
 
-1. From the start menu of the **ARCHOST** VM, search for **putty (1)** and select **putty (2)**.
+1. From the start menu of the **ARCHOST** VM, search for **Putty (1)** and select **Putty (2)**.
 
-    ![](.././media/startputty.png "Search Putty")
+    ![](.././media/ex1.task2.1.png "Search Putty")
      
 1. In Putty Configuration tool, enter the **ubuntu-k8s** VM private IP - ```192.168.0.8 (1)```, make sure the Port value is ```22 (2)```. Once you have entered the private IP of the **ubuntu-k8s** VM, click on the **Open (3)** to launch the terminal.
 
@@ -99,13 +99,15 @@ In this exercise, you will be performing the following tasks:
 
    ![](.././media/variableazlogin.gif "Install Arc Agent")
 
-1. Then, select the first 7 lines and, then right click and copy. 
+1. Then, select the first 7 **lines (1)** and, then right click and **Copy (2)**. 
+
+    ![](.././media/ex5.task1.3.png)
 
 1. Then, go back to the **putty session** and paste it into the ubuntu-k8s VM by doing a right click and it will start executing. 
 
 1. Once it is executed, you have declared the values of AppID, AppSecret, TenantID, SubscriptionID, ResourceGroup, and location, and then logged into Azure using the 7th line. You can also find the values of these variables in the **Environment Details** tab. These variables are required for the next steps.
 
-    ![](.././media/variableazlogin.png "azlogin")
+    ![](.././media/ex5.task1.4.png "azlogin")
 
 1. Run the below commands one after the other.
 
@@ -114,11 +116,17 @@ In this exercise, you will be performing the following tasks:
    microk8s status --wait-ready
    ```
 
-    ![](.././media/gg-6-16.png "azlogin")   
+    ![](.././media/ex5.task1.5.png "azlogin")   
 
      > **Note:** Wait until the first command runs successfully. This may take around **10–15 minutes**. Then, run the second command, which can take approximately **15–20 minutes** to complete.
 
      > **Note:** If `microk8s status --wait-ready` takes more than **20–30 minutes** to execute, press **Ctrl+Z** to terminate it and proceed further.
+
+1. Navigate to the Kubernetes clusters section in the Azure portal, and verify that the cluster is created. Ensure that its state is shown as Connected.
+
+      ![](.././media/ex5.task1.6.png "azlogin") 
+
+      ![](.././media/ex5.task1.7.png "azlogin") 
 
      > **Note:** If the resource `microk8s-cluster` shows **"Not Connected"** in the Azure Portal even after onboarding, you may need to manually refresh the cluster configuration and reconnect it to Azure Arc. Follow the steps below to resolve this:.
      >
@@ -184,11 +192,11 @@ In this exercise, you will be performing the following tasks:
 
    The output should include the following value as given here: ``"complianceState": "Compliant"``
 
-   ![](.././media/cs2.png) 
+   ![](.././media/ex5.task1.8.png) 
   
-1. In the Azure Portal which you have opened in the browser window, navigate to Resource group **azure-arc** -> Resource **microk8s-cluster** -> **GitOps** under settings. Ensure that the operator state status is **Succeeded**.
+1. In the Azure Portal which you have opened in the browser window, navigate to Resource group **azure-arc** -> Resource **microk8s-cluster** -> **GitOps (1)** under settings. Ensure that the operator state status is **Succeeded (2)**.
 
-   ![](.././media/arc34.png) 
+   ![](.././media/ex5.task1.9.png) 
   
 ## Task 4: Validate the Kubernetes configuration - Read Only
 
@@ -225,17 +233,19 @@ After config-agent has installed the flux instance, resources held in the git re
 
 1. Navigate to **master (1)** branch, **cluster-apps (2)**.
 
-   ![](.././media/arc36.png)   
+   ![](.././media/ex5.task1.10.png)   
 
 1. Click on **arc-k8s-demo.yaml (1)** and then **edit (2)** icon to edit the yaml file.   
 
-   ![](.././media/arc37.png)
+   ![](.././media/ex5.task1.11.png) 
 
 1. Change the CPU request to **120 (1)** around 32nd line and click on **Commit changes (2)** to confirm the changes to the CPU request.
 
-   ![](.././media/arc38.png)
+   ![](.././media/ex5.task1.12.png) 
 
-1. Click on **Commit changes** again.    
+1. Click on **Commit changes** again. 
+
+   ![](.././media/ex5.task1.13.png) 
 
     >**Note:** Repeat the steps for `master` branch as well.
    
@@ -271,3 +281,5 @@ After config-agent has installed the flux instance, resources held in the git re
 In this exercise, you deployed a sample Kubernetes app using the az k8sconfiguration command and GitOps. You then updated the linked repository configuration and verified that the connected Kubernetes cluster applied the updates automatically based on the changes made.
 
 ### You have successfully completed the exercise. Click on **Next** from the bottom right corner to proceed with the next exercise.
+
+![](.././media/next5.png)

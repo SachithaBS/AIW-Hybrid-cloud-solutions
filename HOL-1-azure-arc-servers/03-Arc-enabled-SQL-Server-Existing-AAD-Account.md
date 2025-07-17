@@ -16,23 +16,23 @@ In this exercise, you will be performing the following tasks:
 
 1. Navigate back to Azure Portal which you have already opened in the previous exercises.
       
-1. Click on the search blade at the top and search for ``SQL Server (1)``, select **SQL Server - Azure Arc (2)**.
+1. Click on the search blade at the top and search for ``SQL Server`` **(1)**, select **SQL Server - Azure Arc (2)**.
  
-   ![](.././media/hyd19.png "sqlsearch")
+   ![](.././media/ex3.task1.1.png "sqlsearch")
    
 1. Click on the **+ Add** button to create the **Azure Arc | SQL Server**. 
  
-   ![](.././media/ss2.png "sqlsearch")
+   ![](.././media/ex3.task1.2.png "sqlsearch")
    
 1. In the Adding existing SQL Server instances page, click on **Connect SQL Server instances**.
 
-   ![](.././media/arc-75.png "sqlsearch")
+   ![](.././media/ex3.task1.3.png "sqlsearch")
    
 1. You will now see the prerequisite page. You can explore the page and then click on the **Next: Server details** option.
     
    > **Note:** We have already completed the prerequisite part for you. 
     
-   ![](.././media/presql.png "sqlsearch")
+   ![](.././media/ex3.task1.4.png "sqlsearch")
    
 1. On the **Server Details** blade, enter the below details.
  
@@ -53,12 +53,14 @@ In this exercise, you will be performing the following tasks:
       ![](.././media/hybrid41.png "sqlsearch")
    
 1. Leave the default for tags blade and click on **Next: Run Script** button.
+
+      ![](.././media/ex3.task1.5.png)
  
 1. On the **Script** blade, explore the given script. We will be using this PowerShell script to **Register Azure Arc enabled SQL Server** later.
  
    > **Note:** Please **skip the script download** from here by clicking on ``X`` at the top right as we have **already downloaded** this script inside the Lab VM for you.
     
-   ![](.././media/runsqlv2.png "sqlsearch")
+   ![](.././media/ex3.task1.6.png "sqlsearch")
      
 ## Task 2: Register Azure Arc-enabled SQL Server.
 
@@ -94,7 +96,9 @@ In this exercise, you will be performing the following tasks:
   
    > **Note:** You can ignore any error or warning messages that appear after the output line: "**SQL Server - Azure Arc resources: SQL VM created**".
 
-1. Bring back the browser window where you had opened Azure Portal and search for **Azure Arc | SQL Server instances**. If you are already on that page, you will need to click on the Refresh button. On that page, you will see one resource **SQLVM** that we just created using the PowerShell script in the previous step.
+1. Navigate back the browser window where you had opened Azure Portal and search for **Azure Arc | SQL Server instances**. If you are already on that page, you will need to click on the Refresh button. On that page, you will see one resource **SQLVM** that we just created using the PowerShell script in the previous step.
+
+   ![](.././media/ex3.task2.1.png)
 
    ![](.././media/hybrid36.png "sqlsearch")
 
@@ -145,21 +149,21 @@ In this exercise, you will be performing the following tasks:
 
 ## Task 3: Run on-demand SQL Assessment.
 
-1. Click on the search blade at the top, search for ```Log Analytics workspace (1)``` and then select **Log Analytics workspaces (2)** from the services.
+1. Click on the search blade at the top, search for ```Log Analytics workspace``` **(1)** and then select **Log Analytics workspaces (2)** from the services.
 
-   ![](.././media/arc21.png "H1E3T2S8")
+   ![](.././media/ex3.task3.1.png "H1E3T2S8")
    
 1. Select **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false" />**
    
-   ![](.././media/hybrid39.png "H1E3T2S8")
+   ![](.././media/ex3.task3.2.png "H1E3T2S8")
 
 1. Then select **Agents (1)** under Settings section from the left side menu. Click on **Log Analytics agent instructions (2)** and copy the value of **Workspace ID (3)** and **Primary Key (4)** and save it into a Notepad or Notepad++ for later use.
  
-   ![](.././media/hybrid40.png "sqlsearch")
+   ![](.././media/ex3.task3.3.png "sqlsearch")
 
 1. Now, search for **Machines - Azure Arc (1)** from search box and click on **Machines - Azure Arc (2)**.
  
-   ![](.././media/hyd20.png "server-azure-arc-search") 
+   ![](.././media/ex3.task3.4.png "server-azure-arc-search") 
    
 1. Select **sqlvm** from the list of Azure Arc servers.
 
@@ -171,7 +175,7 @@ In this exercise, you will be performing the following tasks:
     
 1. Click on the **+ Add** button to add a new extension.
 
-   ![](.././media/hyd23.png "sqlsearch")
+   ![](.././media/ex3.task3.5.png "sqlsearch")
 
 1. Search for **Log Analytics Agent - Azure Arc (1)** extension press **Enter**, then select the **Log Analytics Agent - Azure Arc (2)** and click on the **Next (3)** button to continue.
  
@@ -181,29 +185,29 @@ In this exercise, you will be performing the following tasks:
   
 1. Now, enter the **Workspace Id (1)** and **Workspace Key (2)** that you copied from the previous step, click on **Review + create (3)** button.
  
-   ![](.././media/hyd25.png "sqlsearch")
+   ![](.././media/ex3.task3.6.png "sqlsearch")
 
 1. Review the configuration, and click on **Create**.
 
-   ![](.././media/hyd26.png "sqlsearch")
+   ![](.././media/ex3.task3.7.png "sqlsearch")
 
    > **Note:** The deployment will take around 5 to 10 minutes to complete. You have to wait for this deployment to be successful to proceed to the next step.
    
 1. Open **sqlvm** from the Hyper-V Manager by double clicking on **sqlvm**.
 
-   ![](.././media/opensqlvm.png "opensqlvm")
+   ![](.././media/ex3.task3.8.png "opensqlvm")
 
 1. On Connect to sqlvm box, scroll the bar towards **Small** to open the VM in the smallest window and then click on the **Connect** button.
 
-   ![](.././media/scalsqlvm.png "scalsqlvm")
+   ![](.././media/ex3.task3.9.png "scalsqlvm")
 
 1. Type password **demo@pass123** and press **Enter** button to login. Then, you can resize the SQLVM window at your convenience.
    
-   ![](.././media/entervmpassword.png "entervmpassword")
+   ![](.././media/ex3.task3.10.png "entervmpassword")
 
-1. Click on Start Menu and search for **Management**, then select **Microsoft SQL Server Management Studio 18**.
+1. Click on Start Menu and search for **Management (1)**, then select **Microsoft SQL Server Management Studio 18 (2)**.
    
-   ![](.././media/H1E3T3S13.png "H1E3T3S13")
+   ![](.././media/ex3.task3.11.png "H1E3T3S13")
   
 1. On **Connect to server** pop-up, select **SQLVM (1)** as Server name from drop-down and click on **Connect (2)**.
 
@@ -221,11 +225,11 @@ In this exercise, you will be performing the following tasks:
    
    > **Note:** Skip and continue from **Step 20** if **change license type** option is not available.
    
-   ![](.././media/hybrid42.png "H1E3T3S17")
+   ![](.././media/ex3.task3.12.png "H1E3T3S17")
 
 1. Under **SQL Server Configuration**, scroll down and select license type as **License with Software Assurance (1)** and click on **Save (2)**.
 
-   ![](.././media/hybrid43.png "H1E3T3S18")
+   ![](.././media/ex3.task3.13.png "H1E3T3S18")
 
 1. Navigate back to **Best practices assessment**.
 
@@ -233,7 +237,7 @@ In this exercise, you will be performing the following tasks:
 
 1. Wait for few minutes sometimes it may take around 5-10 minutes to refresh the assessment settings, then select the log Analytics Workspace as **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false" /> (1)** from the drop-down and click on **Enable assessment (2)**.
 
-   ![](.././media/hybrid44.png "H1E3T3S19")
+   ![](.././media/ex3.task3.14.png "H1E3T3S19")
 
    > **Note:** After enabling the assessment, wait for a few minutes to get it complete. 
    
@@ -256,3 +260,5 @@ In this exercise, you will be performing the following tasks:
 In this exercise, you registered an Azure Arc-enabled SQL Server, enabling centralized management and monitoring of SQL resources. You also performed an on-demand SQL Assessment to evaluate the server's configuration, identify potential issues, and receive recommendations for optimization and best practices.
 
 ### You have successfully completed the exercise. Click on **Next** from the bottom right corner to proceed with the next exercise.
+
+![](.././media/next3.png)

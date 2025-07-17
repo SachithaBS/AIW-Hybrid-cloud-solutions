@@ -19,15 +19,15 @@ You can connect your non-Azure computers in any of the following ways:
  
 1. Search for **Microsoft Defender for Cloud (1)** in the Azure portal search bar and then click on **Microsoft Defender for Cloud (2)**.
     
-   ![](.././media/arc15.png)
+   ![](.././media/ex2.task1.1.png)
    
 1. From the **Overview (1)** page, click on **Enable Defender plans (2)** under Workload protection.   
 
-   ![](.././media/gg-3-2.png)
+   ![](.././media/ex2.task1.2.png)
 
 1. On the **Upgrade (1)** tab, scroll down and then **check on all the checkboxes (2)** and click on **Upgrade (3)**.
 
-   ![](.././media/arc17.png)
+   ![](.././media/ex2.task1.3.png)
    
 1. On the **Overview** page, select **Azure subscription.**
    
@@ -81,24 +81,24 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
 
    > **Note**: You have already installed Log Analytics Agent into the Linux VM - ubuntu-k8s in the previous exercise. You can refer to **Task 5** in the previous exercise to review it again. Also, the screenshots of the log results can be mismatched because the results can take more time to get the same results. 
 
-1. Search for ```Microsoft Sentinel``` on the Azure portal and then select the **Microsoft Sentinel** from the search result.
+1. Search for ```Microsoft Sentinel``` **(1)** on the Azure portal and then select the **Microsoft Sentinel (2)** from the search result.
 
-      ![](.././media/ss1.png)
+      ![](.././media/ex2.task2.1.png)
     
 1. On **Microsoft Sentinel** blade, click on **+ Create** to add Microsoft Sentinel to a workspace. 
 
-      ![](.././media/gg-3-9.png)
+      ![](.././media/ex2.task2.2.png)
     
 1. Select the existing log analytics workspace shown named **LogAnalyticsWS-<inject key="DeploymentID" enableCopy="false" /> (1)**
   and then click on the **Add (2)** button.
 
-      ![](.././media/hybrid19.png)
+      ![](.././media/ex2.task2.3.png)
       
 1. You will see a notification in the upper right corner **Adding Microsoft Sentinel**. It will take around 1 minute to get added.
     
 1. Once the Microsoft Sentinel is added, you will see another notification which says **Successfully added Microsoft Sentinel** as shown below.
      
-      ![](.././media/microsen-success.png)
+      ![](.././media/ex2.task2.4.png)
  
 1. Click on the **Overview** on the Microsoft Sentinel page from where you can view the insights after a few minutes. If you are not able to view the insights after a few minutes, then refresh the browser tab.
     
@@ -106,13 +106,15 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
 
 1. Click on the **Content hub (1)** on the Microsoft Sentinel page, Search for **Syslog (2)** press **Enter** and select **Syslog (3)**. Click on **Install (4)**. Wait until it's installed before proceeding to the next step.
 
-      ![](.././media/arc29.png)      
+      ![](.././media/ex2.task2.5.png)      
     
 1. Now, click on the **Workbooks (1)** from the left pane under the **Threat management** section, navigate to **Template (2)** tab and search for ```Linux machines``` **(3)** then select **Linux machines (4)** from the search result and then click on **Save (5).**
     
-      ![](.././media/arc19.png)
+      ![](.././media/ex2.task2.6.png)
     
 1. Then from the bottom-right corner of the Azure portal, click on **Yes** to save the workbook. 
+
+      ![](.././media/ex2.task2.7.png)
     
 1. Now, go back to **Microsoft Sentinel Overview** blade by clicking on **Overview (1)** under General section on the left. Disable the **New Overview (2)** toggle and then click on **INSIGHTSMETER (3)** to query the **ubuntu-k8s** VM insights. The count of **Events** could be different on your Microsoft Sentinel Dashboard.
 
@@ -122,7 +124,7 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
 
       ![](.././media/hybrid26.png)
     
-1. Let us check for **ubuntu-k8s** processes by running the following query, you can change the time range limit as well to see the result of a specific time interval. You can scroll right on the **Results** section and see more details and descriptions about every process. 
+1. Let us check for **ubuntu-k8s** processes by running the following query. Switch to **KQL mode (1)**, paste the below **Code (2)** in the query editor, and click on **Run (3)** to execute the query. You can change the time range limit as well to see the result of a specific time interval. You can scroll right on the **Results** section and see more details and descriptions about every process. 
 
       > **Note**: The data might take around 30 mins to get populated. If you don't find the data, you can skip to Task 2: Enable Microsoft Defender for Cloud and come back later to this task to re-execute the query and filter the data.
 
@@ -134,11 +136,11 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
    
       > **Note**: In the above query, against TimeGenerated,  ago(24h) means "24 hours ago" so this query only returns records from the last 24 hours.
 
-      ![](.././media/hybrid24.png)   
+      ![](.././media/ex2.task2.8.png)   
     
 1. You can save the query for later use by clicking on the **Save (1)** and then **Save as query (2)** button.
 
-      ![](.././media/hybrid22.png) 
+      ![](.././media/ex2.task2.9.png) 
    
 1. Now, provide `VMProcess` for the **Query name (1)**, then click on **Save (2)**.
 
@@ -146,11 +148,11 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
 
 1. You can see and run the saved **queries** by browsing to **Queries hub**
    
-      ![](.././media/hybrid13.png) 
+      ![](.././media/ex2.task2.10.png) 
    
 1. Then, you will find the `VMProcess` **(1)** query under **Queries hub**, click on **Run (2)** to run the query.
    
-      ![](.././media/hybrid28.png) 
+      ![](.././media/ex2.task2.11.png) 
 
       ![](.././media/arc20.png)       
 
@@ -159,3 +161,5 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
 In this exercise, you onboarded an Azure Arc-enabled machine to Microsoft Sentinel, enhancing its security and threat detection capabilities. Additionally, you enabled Microsoft Defender for Cloud to further strengthen security posture, ensuring comprehensive protection and monitoring across your hybrid infrastructure.
 
 ### You have successfully completed the exercise. Click on **Next** from the bottom right corner to proceed with the next exercise.
+
+![](.././media/next2.png)
